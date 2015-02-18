@@ -19,6 +19,8 @@ System.config({
     "bootstrap": "github:twbs/bootstrap@3.3.2",
     "commonmark": "npm:commonmark@0.17.1",
     "font-awesome": "npm:font-awesome@4.3.0",
+    "moment": "npm:moment@2.9.0",
+    "numeral": "npm:numeral@1.5.3",
     "github:aurelia/binding@0.3.4": {
       "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.2",
       "aurelia-metadata": "github:aurelia/metadata@0.3.1",

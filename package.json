@@ -55,6 +55,8 @@
       "bootstrap": "^3.3.1",
       "commonmark": "npm:commonmark@^0.17.1",
       "font-awesome": "^4.3.0",
+      "moment": "npm:moment@^2.9.0",
+      "numeral": "npm:numeral@^1.5.3",
       "remarkable": "npm:remarkable@^1.6.0"
     }
   }

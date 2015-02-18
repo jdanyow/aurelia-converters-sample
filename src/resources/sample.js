@@ -4,7 +4,8 @@ export class Sample {
   static metadata(){
     return Behavior
       .customElement('sample')
-      .withProperty('src');
+      .withProperty('src')
+      .withProperty('converters');
   }
 
   constructor(element) {

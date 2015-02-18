@@ -1,5 +1,5 @@
 <template>
-  <div class.bind="iframe ? 'container-fluid' : 'container'">
+  <div class.bind="iframe ? 'container-fluid ghost' : 'container'">
 
     <div markdown="
       # Aurelia Value Converters
@@ -32,13 +32,55 @@
 
     <sample src="samples/1"></sample>
 
+    <p>
     Sometimes the raw data exposed by your view-model isn't in a format that's
     ideal for displaying in the UI.  Displaying date and numeric values are
     common scenarios:
+    </p>
 
     <sample src="samples/2"></sample>
 
+    <div markdown="
+      Ideally the date would be in a more readable format and the amount would
+      be formatted as currency.  One solution to this problem would be to compute
+      the formatted values and expose them as properties of the view-model.  This
+      is certainly a valid approach however defining extra properties and methods
+      in your models can get messy, especially when you need to keep the formatted
+      values in sync when the original property values change.  Fortunately
+      Aurelia has a feature that makes solving this problem quite easy...
+
+      ## Value Converters
+
+      **A value converter is a class whose responsibility is to convert view-model
+      values into values that are appropriate to bind to a view *and visa-versa*.**
+
+      Most commonly you'll be creating value converters that translate model data
+      to a format suitable for the view however there are situations where you'll
+      need to convert data from the view to a format expected by the view-model,
+      typically when using two-way binding with input elements.
+
+      If you've used value converters in other languages such as WPF/Silverlight
+      you'll find Aurelia value converters are quite similar although with a few
+      notable improvements:
+
+      1. The Aurelia ValueConverter interface uses `toView` and `fromView` methods
+        which make it quite clear which direction the data is flowing.  This is in
+        contrast to WPF's `IValueConverter` which uses `Convert` and `ConvertBack`.
+      2. In Aurelia, converter parameter's can be data-bound.  This is something
+        that was missing in Silverlight and enables more advanced binding scenarios.
+      3. Aurelia value converter methods can accept multiple parameters.
+        todo: explain why this is awesome.
+      4. Multiple value converters can be &quot;piped&quot; together.
+        todo: explain why this is awesome.
+
+      Before we get to far into the details, let's re-work the previous example to
+      use a couple of basic value converters.  Since we need to format a date and
+      a numeric value let's write a couple of converters that use the popular
+      [Moment](http://momentjs.com/) and [Numeral](http://numeraljs.com/) libraries.
+      ">
+    </div>
+
+    <sample src="samples/3" converters.bind="['date', 'currency']"></sample>
+
   </div>
-
-
 </template>
