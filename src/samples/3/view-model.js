@@ -5,7 +5,8 @@ export class NetWorth {
 
     setInterval(() => {
       this.currentDate = new Date();
-      this.netWorth += (Math.random() - 0.43) * (1000 + this.netWorth);
+      this.netWorth +=
+        (Math.random() - 0.43) * (1000 + this.netWorth);
     }, 1000);
   }
 }
