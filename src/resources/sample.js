@@ -7,12 +7,8 @@ export class Sample {
       .withProperty('src');
   }
 
-  // static inject() { return [Element]; }
-  // constructor(element) {
-  //   this.element = element;
-  // }
-
-  // valueChanged(newValue) {
-  //
-  // }
+  constructor(element) {
+    // todo: something more clever:
+    this.githubBase = 'https://github.com/jdanyow/aurelia-converters-sample/blob/gh-pages';
+  }
 }
