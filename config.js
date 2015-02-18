@@ -11,7 +11,6 @@ System.config({
 System.config({
   "map": {
     "aurelia-bootstrapper": "github:aurelia/bootstrapper@0.9.3",
-    "aurelia-converters": "github:jdanyow/aurelia-converters@master",
     "aurelia-dependency-injection": "github:aurelia/dependency-injection@0.4.2",
     "aurelia-framework": "github:aurelia/framework@0.8.6",
     "aurelia-http-client": "github:aurelia/http-client@0.5.0",
@@ -104,10 +103,6 @@ System.config({
       "aurelia-path": "github:aurelia/path@0.4.3",
       "aurelia-task-queue": "github:aurelia/task-queue@0.2.3",
       "core-js": "npm:core-js@0.4.10"
-    },
-    "github:jdanyow/aurelia-converters@master": {
-      "moment": "npm:moment@2.9.0",
-      "numeral": "npm:numeral@1.5.3"
     },
     "github:jspm/nodelibs-assert@0.1.0": {
       "assert": "npm:assert@1.3.0"
@@ -262,4 +257,3 @@ System.config({
     }
   }
 });
-
