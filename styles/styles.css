@@ -2,6 +2,10 @@ body {
   margin: 0;
 }
 
+.ghost {
+  padding: 0px;
+}
+
 .splash {
     text-align: center;
     margin: 10% 0 0 0;
