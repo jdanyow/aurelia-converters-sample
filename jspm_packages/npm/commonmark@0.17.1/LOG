@@ -1,0 +1,292 @@
+commit 1e85e5558bb77649fceef7e64cde7ffda22ef46d
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Thu Jan 29 11:01:16 2015 -0800
+
+    Updated dist/commonmark.js.
+
+commit a1aebe4248c7aeb57ca44f3c0f5514a6f20ec326
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Thu Jan 29 07:44:46 2015 -0800
+
+    Browser benchmarks now produce a nice table of ratios.
+
+commit e14161ffed1cf57f5e4917504d36db381de08005
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 23:35:58 2015 -0800
+
+    Updated benchmarks in README.
+    
+    Previous benchmarks were unfair to showdown because of
+    the way the benchmark was constructed.
+
+commit 3f866338492ec503d4496f7af1de0f35dfc1301c
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 23:21:32 2015 -0800
+
+    Benchmark tweaks.
+    
+    Move object construction out of benchmarks.
+
+commit 228a41f6d2c7cd065dfda40ec9997d5c310c08f0
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 22:37:15 2015 -0800
+
+    Improved in-browser benchmark.
+
+commit 868187f3e4286a85d9875cf360026211b0eb1284
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Wed Jan 28 17:36:50 2015 -0800
+
+    Added primitive in-browser benchmark.
+
+commit 5ffd02a1637229e2042e7272477e59a3147fd806
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 15:47:35 2015 -0800
+
+    More logic improvements, got rid of ad hoc check for Paragraph.
+
+commit a3d6da09de9b8a6ceca8244c8bf01336318e7d87
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 09:45:22 2015 -0800
+
+    Simplified logic, got rid of unnecessary switch.
+
+commit 8e5c73d66ae0f75df7e8785c7435109ef59bf3e5
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 09:37:32 2015 -0800
+
+    Simplified some logic.
+
+commit f8c1e2b55291cfd9677b7ed69a10570c2934e811
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 09:36:54 2015 -0800
+
+    Simplified use of lastLineLength in sourcepos.
+
+commit 498052700fbb7f4af45184aed47ee2dabe40e392
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 09:20:13 2015 -0800
+
+    Added acceptsLines fields to blocks.
+    
+    Removed old acceptsLines function.
+
+commit b8ff6affdd9e8717e23561f33388880ece923a7e
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 09:04:20 2015 -0800
+
+    Added canContain field to blocks.
+    
+    Removed standalone canContain function.
+
+commit 8ec0422268ce3192106a1cdb5e9f650077f0ef4f
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 08:54:26 2015 -0800
+
+    Added allClosed state to parser.
+    
+    Set and check this in closeUnmatchedBlocks.
+
+commit 32fe1d6dfa64026a1e80a24004be205f623d8d50
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 08:48:07 2015 -0800
+
+    Moved test for code block or html block.
+
+commit 3029746fbc0b4d977b6c0768ef5c2e694650ac32
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Wed Jan 28 08:32:56 2015 -0800
+
+    More code cleanup:  only advance offset after matching.
+
+commit e1727e1df2df26ce99a916328b5c652e962f3633
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Tue Jan 27 21:07:44 2015 -0800
+
+    blocks: Use charAt instead of charCodeAt.
+    
+    charCodeAt seems to bring to speed improvement.
+
+commit 77b3eb2077171a614cc07f18f07764d0e509de60
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Tue Jan 27 21:03:35 2015 -0800
+
+    Simplified test for block quote start.
+
+commit 7395c71b79a58aede66b58269d3acb6377711041
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Tue Jan 27 20:39:27 2015 -0800
+
+    Rearranged some code for a more logical structure.
+
+commit 57a8fa73a676b178ff7e190b269674c235859858
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Mon Jan 26 14:59:03 2015 -0800
+
+    Removed version from bower.json.  Bower takes version from tags.
+
+commit 33dbd5a9a3fc7ce4e251db1734ba6749271045a9
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 23:26:24 2015 -0800
+
+    Initialize some properties at beginning of 'parse'.
+    
+    This fixes some mistakes in source position when the
+    same Parser object was used to parse multiple times.
+    
+    Closes #3.
+
+commit e146f8e3ebf79679c3395cbf746ff20d50700920
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 21:41:10 2015 -0800
+
+    More minor rewrites for clarity.
+
+commit 2e932051fbd28ec067c6bc040341e50064a2c555
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 21:35:57 2015 -0800
+
+    Slight code rewrite for clarity.
+
+commit d8ac65c586459e8448051d5f1d980bd02358e8f5
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 21:28:24 2015 -0800
+
+    Use a precompiled regex.
+
+commit 5cbfd31dab9db9b97ee866619f04e055695f2a32
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 21:26:07 2015 -0800
+
+    Made parsing of backslash escapes a bit more efficient.
+    
+    We don't need to test that current char is backslash; that
+    has already been done.
+
+commit feec4691867ebac29d4a2e365b3a6fd751a175d9
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 21:17:28 2015 -0800
+
+    Slight improvement for parseBackticks.
+
+commit 50a6bf7f49c4257d166d944a6db2a05ae627b39c
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 21:09:27 2015 -0800
+
+    Minor notational change.
+
+commit 717c0c67b88c3cebf2486e69a534e89e29ec7b02
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 20:40:40 2015 -0800
+
+    Removed refmap parameter of InlineParser.parse().
+    
+    Instead, set the refmap property before running the parser.
+
+commit 62b04cb124696ffde2e1d533be4666c1a534851e
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 18:05:15 2015 -0800
+
+    Updated benchmarks.
+
+commit d7ad51b87da149762df5e8a01eb655b69bf9f1de
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 17:34:41 2015 -0800
+
+    Set _string_content to null after using.
+    
+    This allows it to be GC'd.
+
+commit f9e4626725da8ef39e093edc4c55a8a46a9eac95
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 17:30:03 2015 -0800
+
+    Removed redundant assignment.
+
+commit 57ecbf447304c9d902a46a4788e59ed71ab66bca
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 17:17:45 2015 -0800
+
+    Fixed some eslint errors.
+
+commit ac80f100b580eb6f935a23b11c85cf0d4f82d051
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 17:15:49 2015 -0800
+
+    Removed _strings; just append to _string_content.
+    
+    This gives better performance with v8.
+
+commit 45accac8f573079923e82ae7d8d0f0dce81ae0cf
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 16:30:55 2015 -0800
+
+    Small performance optimization.
+
+commit 33066c5ba75d39c6da32168e66af3e24dbdc37ae
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 13:18:58 2015 -0800
+
+    New benchmark table with links to samples.
+
+commit dd65ebec23a77136df25f58912fda7bcdc8e87a3
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 13:04:46 2015 -0800
+
+    Format benchmarks so that samples are linked.
+
+commit 4dae077f0eb1252f4ff3a0bfb6ba08868802037c
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 12:46:56 2015 -0800
+
+    Added documentation for Node walking.
+
+commit 293f8e46ca168cc80168f04b731f777c60feda8c
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 12:13:08 2015 -0800
+
+    Began documenting public API.
+
+commit d9b68baf573e2804a765b36dad3d22862bf865aa
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 11:45:26 2015 -0800
+
+    xml renderer:  use 'sourcepos' attribute, not 'data-sourcepos'.
+
+commit 841a4b61d0eca3a4853d9e3769721b6781503a5e
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 11:29:35 2015 -0800
+
+    Fixed license in README
+
+commit 0076f7865d09fd722f01722216d58f7854159b35
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 11:20:06 2015 -0800
+
+    LICENSE - added clause for spec.txt.
+
+commit f89d62595488b446c55ea0ce9c4393125bda4a2f
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 11:12:33 2015 -0800
+
+    Clarified license in bower.json, package.json.
+
+commit f9b530bb18e7bff203f0335587767440787ae695
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 11:08:34 2015 -0800
+
+    Use 2-clause form of BSD license.
+    
+    The legal implications of the 3rd clause seem too unclear.
+
+commit 51c2806bbdfde9854884970c878c29a7ae950df7
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Jan 25 10:56:06 2015 -0800
+
+    Added some license info which was in the original CommonMark COPYING.
+
+commit cb167944b439e784687804bdb84a918d6c85db87
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sat Jan 24 23:45:23 2015 -0800
+
+    README: note on installing with bower.

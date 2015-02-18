@@ -1,0 +1,63 @@
+{
+  "name": "commonmark",
+  "description": "a strongly specified, highly compatible variant of Markdown",
+  "version": "0.17.1",
+  "homepage": "http://commonmark.org",
+  "keywords": [
+    "markdown",
+    "commonmark",
+    "md",
+    "stmd"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jgm/commonmark.js.git"
+  },
+  "author": {
+    "name": "John MacFarlane"
+  },
+  "bugs": {
+    "url": "https://github.com/jgm/commonmark.js/issues"
+  },
+  "license": "BSD-2-Clause",
+  "main": "./lib/index.js",
+  "bin": {
+    "commonmark": "./bin/commonmark"
+  },
+  "scripts": {
+    "test": "node ./test/test.js ./test/spec.txt"
+  },
+  "engines": {
+    "node": "*"
+  },
+  "gitHead": "d89adcd2ba20845b6e5e9f0f8814ce6c43dbd3c8",
+  "_id": "commonmark@0.17.1",
+  "_shasum": "faa3ffdce05fc35884feafa0aa0efe1be31234b1",
+  "_from": ".",
+  "_npmVersion": "1.4.21",
+  "_npmUser": {
+    "name": "fiddlosopher",
+    "email": "fiddlosopher@gmail.com"
+  },
+  "maintainers": [
+    {
+      "name": "fiddlosopher",
+      "email": "fiddlosopher@gmail.com"
+    }
+  ],
+  "dist": {
+    "shasum": "faa3ffdce05fc35884feafa0aa0efe1be31234b1",
+    "tarball": "http://registry.npmjs.org/commonmark/-/commonmark-0.17.1.tgz"
+  },
+  "jspm": {},
+  "registry": "npm",
+  "format": "cjs",
+  "ignore": [
+    "node_modules"
+  ],
+  "dependencies": {
+    "fs": "github:jspm/nodelibs-fs@^0.1.0",
+    "process": "github:jspm/nodelibs-process@^0.1.0",
+    "util": "github:jspm/nodelibs-util@^0.1.0"
+  }
+}
