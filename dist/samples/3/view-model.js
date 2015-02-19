@@ -1,25 +1,39 @@
 System.register([], function (_export) {
   "use strict";
 
-  var _classCallCheck, NetWorth;
+  var _prototypeProperties, _classCallCheck, NetWorth;
   return {
     setters: [],
     execute: function () {
+      _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
+
       _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
-      NetWorth = _export("NetWorth", function NetWorth() {
-        var _this = this;
-        _classCallCheck(this, NetWorth);
+      NetWorth = _export("NetWorth", (function () {
+        function NetWorth() {
+          var _this = this;
+          _classCallCheck(this, NetWorth);
 
-        this.currentDate = new Date();
-        this.netWorth = 0;
+          this.update();
+          setInterval(function () {
+            return _this.update();
+          }, 1000);
+        }
 
-        setInterval(function () {
-          _this.currentDate = new Date();
-          _this.netWorth += (Math.random() - 0.43) * (1000 + _this.netWorth);
-        }, 1000);
-      });
+        _prototypeProperties(NetWorth, null, {
+          update: {
+            value: function update() {
+              this.currentDate = new Date();
+              this.netWorth = Math.random() * 1000000000;
+            },
+            writable: true,
+            configurable: true
+          }
+        });
+
+        return NetWorth;
+      })());
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhbXBsZXMvMy92aWV3LW1vZGVsLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozt1QkFBYSxRQUFROzs7Ozs7QUFBUixjQUFRLHVCQUNSLFNBREEsUUFBUTs7OEJBQVIsUUFBUTs7QUFFakIsWUFBSSxDQUFDLFdBQVcsR0FBRyxJQUFJLElBQUksRUFBRSxDQUFDO0FBQzlCLFlBQUksQ0FBQyxRQUFRLEdBQUcsQ0FBQyxDQUFDOztBQUVsQixtQkFBVyxDQUFDLFlBQU07QUFDaEIsZ0JBQUssV0FBVyxHQUFHLElBQUksSUFBSSxFQUFFLENBQUM7QUFDOUIsZ0JBQUssUUFBUSxJQUNYLENBQUMsSUFBSSxDQUFDLE1BQU0sRUFBRSxHQUFHLElBQUksQ0FBQSxJQUFLLElBQUksR0FBRyxNQUFLLFFBQVEsQ0FBQSxBQUFDLENBQUM7U0FDbkQsRUFBRSxJQUFJLENBQUMsQ0FBQztPQUNWIiwiZmlsZSI6InNhbXBsZXMvMy92aWV3LW1vZGVsLmpzIiwic291cmNlUm9vdCI6Ii9zcmMvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInNhbXBsZXMvMy92aWV3LW1vZGVsLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Ozs2Q0FBYSxRQUFROzs7Ozs7OztBQUFSLGNBQVE7QUFDUixpQkFEQSxRQUFROztnQ0FBUixRQUFROztBQUVqQixjQUFJLENBQUMsTUFBTSxFQUFFLENBQUM7QUFDZCxxQkFBVyxDQUFDO21CQUFNLE1BQUssTUFBTSxFQUFFO1dBQUEsRUFBRSxJQUFJLENBQUMsQ0FBQztTQUN4Qzs7NkJBSlUsUUFBUTtBQU1uQixnQkFBTTttQkFBQSxrQkFBRztBQUNQLGtCQUFJLENBQUMsV0FBVyxHQUFHLElBQUksSUFBSSxFQUFFLENBQUM7QUFDOUIsa0JBQUksQ0FBQyxRQUFRLEdBQUcsSUFBSSxDQUFDLE1BQU0sRUFBRSxHQUFHLFVBQVUsQ0FBQzthQUM1Qzs7Ozs7O2VBVFUsUUFBUSIsImZpbGUiOiJzYW1wbGVzLzMvdmlldy1tb2RlbC5qcyIsInNvdXJjZVJvb3QiOiIvc3JjLyJ9

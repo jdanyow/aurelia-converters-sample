@@ -24,8 +24,8 @@
       the view.  Aurelia's powerful databinding links the two pieces together
       allowing changes in your data to be reflected in the view and vice versa.*
 
-      Here's a simple data-binding example using the bind and interpolation
-      techniques:
+      Here's a simple data-binding example using the bind (`.bind`) and
+      interpolation (`$ {propertyName}`) techniques:
     </markdown>
 
     <sample src="samples/1"></sample>
@@ -71,13 +71,17 @@
       4. Multiple value converters can be &quot;piped&quot; together.
         todo: explain why this is awesome.
 
-      Before we get to far into the details, let's re-work the previous example to
-      use a couple of basic value converters.  Aurelia and the popular
+      Before we get too far into the details, let's re-work the previous example
+      to use a couple of basic value converters.  Aurelia and the popular
       [Moment](http://momentjs.com/) and [Numeral](http://numeraljs.com/) libraries
       will take care of the heavy lifting, we just need to wire things up...
     </markdown>
 
     <sample src="samples/3" converters.bind="['date', 'currency']"></sample>
+
+    <markdown>
+
+    </markdown>
 
     <markdown>
       TODO:
@@ -112,11 +116,17 @@
     <markdown>
       # markdown element tests
 
+      ## anchors
+
       An [external](http://www.google.com) link.
 
       An [internal](#markdown-element-tests) link.
 
+      ## inline code
+
       `inline code`
+
+      ## indented code
 
       code indent:
 
@@ -129,6 +139,8 @@
           <div></div>
           <a></a>
           <!-- adsfasfd -->
+
+      ## back-tic code
 
       js:
       ``` javascript
@@ -162,6 +174,17 @@
       .hidden {
         display: none;
       }
+      ```
+
+      ## headings
+
+      ### h3
+
+      #### h4
+
+      ##### h5
+
+      ###### h6
 
     </markdown>
   </div>

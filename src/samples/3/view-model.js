@@ -1,12 +1,11 @@
 export class NetWorth {
   constructor() {
-    this.currentDate = new Date();
-    this.netWorth = 0;
+    this.update();
+    setInterval(() => this.update(), 1000);
+  }
 
-    setInterval(() => {
-      this.currentDate = new Date();
-      this.netWorth +=
-        (Math.random() - 0.43) * (1000 + this.netWorth);
-    }, 1000);
+  update() {
+    this.currentDate = new Date();
+    this.netWorth = Math.random() * 1000000000;
   }
 }
