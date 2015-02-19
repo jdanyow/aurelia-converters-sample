@@ -1,0 +1,10 @@
+<template>
+  <import from="./rgb-to-hex"></import>
+
+  <label for="color">Enter Hex Color</label>
+  <input id="color" type="text" value.bind="rgb | rgbToHex" />
+
+  <div style.backgroundColor.bind="rgb | rgbToHex">
+    Aurelia!
+  </div>
+</template>
