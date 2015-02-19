@@ -10,22 +10,26 @@ function getHtml(markdown) {
 }
 
 function fixIndent(markdown) {
-  /* This is intended to remove indentation that isnot really part of
-   * the markdown, to preserve the ability to indent the markup properly.
-   *
-   * In the example below the spaces marked with dashes will be removed.
-   *
-   * <template>
-   *   <markdown>
-   * ----# hello world
-   * ----
-   * ----lorem ipsum bla bla
-   * ----
-   * ----    var x = 3;
-   * ----
-   *   </markdown>
-   * </template>
-   */
+  /*
+  This is intended to remove indentation that is not really part of
+  the markdown, to preserve the ability to indent the markup properly.
+
+  In the example below the total indentation will be reduced by 4 characters.
+
+  |
+  |<template>
+  |  <markdown>
+  |    # hello world
+  |
+  |    lorem ipsum bla bla
+  |
+  |        var x = 3;
+  |
+  |  </markdown>
+  |</template>
+  |
+
+  */
   var result = /^( +)\S/im.exec(markdown);
   if (result) {
     markdown = markdown.replace(new RegExp('^ {' + result[1].length.toString() + '}', 'gim'), '');
@@ -45,7 +49,7 @@ function updateAnchorTargets(element) {
 }
 
 function makeHeadingsLinkable(element) {
-  var headings = element.querySelectorAll('h1,h2,h3'),
+  var headings = element.querySelectorAll('h1,h2,h3,h4,h5,h6'),
       i, ii, h, title, slug;
   for(i = 0, ii = headings.length; i < ii; i++) {
     h = headings[i];
