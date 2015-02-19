@@ -1,7 +1,6 @@
 <template>
   <div class.bind="iframe ? 'container-fluid ghost' : 'container'">
-
-    <div markdown="
+    <markdown>
       # Aurelia Value Converters
       An overview of the [Aurelia](http://aurelia.io) framework's value
       converter functionality.
@@ -27,20 +26,19 @@
 
       Here's a simple data-binding example using the bind and interpolation
       techniques:
-      ">
-    </div>
+    </markdown>
 
     <sample src="samples/1"></sample>
 
-    <p>
-    Sometimes the raw data exposed by your view-model isn't in a format that's
-    ideal for displaying in the UI.  Displaying date and numeric values are
-    common scenarios:
-    </p>
+    <markdown>
+      Sometimes the raw data exposed by your view-model isn't in a format that's
+      ideal for displaying in the UI.  Displaying date and numeric values are
+      common scenarios:
+    </markdown>
 
     <sample src="samples/2"></sample>
 
-    <div markdown="
+    <markdown>
       Ideally the date would be in a more readable format and the amount would
       be formatted as currency.  One solution to this problem would be to compute
       the formatted values and expose them as properties of the view-model.  This
@@ -78,11 +76,11 @@
       [Moment](http://momentjs.com/) and [Numeral](http://numeraljs.com/) libraries
       will take care of the heavy lifting, we just need to wire things up...
       ">
-    </div>
+    </markdown>
 
     <sample src="samples/3" converters.bind="['date', 'currency']"></sample>
 
-    <div markdown="
+    <markdown>
       TODO:
 
       rework examples to use both bind and interpolation
@@ -107,8 +105,63 @@
 
       explain packaging as an external plugin
 
+      add ability to copy code samples
+
       byeeee
-      ">
-    </div>
+    </markdown>
+
+    <markdown>
+      # markdown element tests
+
+      An [external](http://www.google.com) link.
+
+      An [internal](#markdown-element-tests) link.
+
+      code indent:
+
+          for(var i = 0; i < 3; i++) {
+
+          }
+
+      code indent:
+
+          <div></div>
+          <a></a>
+          <!-- adsfasfd -->
+
+      js:
+      ``` javascript
+      for(var i = 0; i < 3; i++) {
+
+      }
+      ```
+
+      markup:
+      ``` markup
+      <div></div>
+      <a></a>
+      <!-- adsfasfd -->
+      ```
+
+      bash:
+      ``` bash
+      npm install
+      jspm install aurelia-framework
+      ```
+
+      git:
+      ``` git
+      git add -A
+      git commit -m "saved the day"
+      git push
+      ```
+
+      css:
+      ``` css
+      .hidden {
+        display: none;
+      }
+
+    </markdown>
   </div>
 </template>
