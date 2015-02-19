@@ -8,12 +8,7 @@
       This page is written using Aurelia and contains live examples.  The full
       source is [here](https://github.com/jdanyow/aurelia-converters-sample).
 
-      *Note:  The following examples assume you have a basic understanding of
-      Aurelia data-binding.  Check out the getting started video
-      [here](http://aurelia.io/) or the docs [here](http://aurelia.io/docs.html)
-      for more information.*
-
-      ## Introduction
+      ## Introduction to Data Binding
 
       A short description of data-binding from the Aurelia
       [docs](http://aurelia.io/docs.html):
@@ -24,15 +19,23 @@
       the view.  Aurelia's powerful databinding links the two pieces together
       allowing changes in your data to be reflected in the view and vice versa.*
 
-      Here's a simple data-binding example using the bind (`.bind`) and
-      interpolation (`$ {propertyName}`) techniques:
+      Check out the getting started video
+      [here](http://aurelia.io/) or the docs [here](http://aurelia.io/docs.html)
+      for more information.
+
+      ### Simple Binding Example
+
+      Here's a simple data-binding example using the **bind** (`.bind="expression"`)
+      and **interpolation** (`${expression}`) techniques:
     </markdown>
 
     <sample src="samples/1"></sample>
 
     <markdown>
+      ### Binding Dates and Numbers
+
       Sometimes the raw data exposed by your view-model isn't in a format that's
-      ideal for displaying in the UI.  Displaying date and numeric values are
+      ideal for displaying in the UI.  Rendering date and numeric values are
       common scenarios:
     </markdown>
 
@@ -49,8 +52,9 @@
 
       ## Value Converters
 
-      **A value converter is a class whose responsibility is to convert view-model
-      values into values that are appropriate to bind to a view *and visa-versa*.**
+      > A value converter is a class whose responsibility is to convert
+      view-model* values into values that are appropriate to bind to a view
+      *and visa-versa*.
 
       Most commonly you'll be creating value converters that translate model data
       to a format suitable for the view however there are situations where you'll
@@ -67,36 +71,90 @@
       2. In Aurelia, converter parameter's can be data-bound.  This is something
         that was missing in Silverlight and enables more advanced binding scenarios.
       3. Aurelia value converter methods can accept multiple parameters.
-        todo: explain why this is awesome.
-      4. Multiple value converters can be &quot;piped&quot; together.
-        todo: explain why this is awesome.
+      4. Multiple value converters can be composed using pipes (`|`).
 
-      Before we get too far into the details, let's re-work the previous example
+      ## Simple Converters
+
+      Before we get too far into the details, let's rework the previous example
       to use a couple of basic value converters.  Aurelia and the popular
       [Moment](http://momentjs.com/) and [Numeral](http://numeraljs.com/) libraries
       will take care of the heavy lifting, we just need to wire things up...
     </markdown>
 
-    <sample src="samples/3" converters.bind="['date', 'currency']"></sample>
+    <sample src="samples/3" resources.bind="['date-format', 'currency-format']"></sample>
 
     <markdown>
+      OK, the result looks much better but how did this all work?
 
+      Well first we created a couple of value converters:  `DateFormatValueConverter`
+      and `CurrencyFormatValueConverter`.  Each has a `toView` method that the Aurelia
+      framework will apply to model values before displaying them in the view.
+      Our converters use the MomentJS and NumeralJS libraries to format the data.
+
+      Next we updated the view to `import` the converters so they can be used in
+      the view.  When importing a resource such as a value converter you supply
+      the path to the resource to the import element's `from` attribute.
+    </markdown>
+
+    <markdown value="
+      ``` markup
+      <import from=&quot;./date-format&quot;></import>
+      <import from=&quot;./currency-format&quot;></import>
+      ```">
     </markdown>
 
     <markdown>
+      When Aurelia processes the resource it examines the class's metadata to
+      determine the resource type (custom element, behavior, value converter, etc).
+      Metadata isn't required and in fact our value converters didn't expose any.
+      Instead we relied on one of Aurelia's simple conventions:  class names ending
+      with *ValueConverter* are assumed to be value converters.  The convention
+      registers the converter using the class name, camel-cased, with the *ValueConverter*
+      portion stripped from the end.
+
+      * `DateFormatValueConverter` registers as `dateFormat`
+      * `NumberFormatValueConverter` registers as `numberFormat`
+
+      Finally we applied the converter in the binding using the pipe `|` syntax:
+
+      ``` markup
+      ${currentDate | dateFormat} <br/>
+      ${netWorth | currencyFormat}
+      ```
+
+      ## Converter Parameters
+
+      The converters in the previous example worked great but what if we needed
+      to display dates and numbers in multiple formats.  It would be quite repetitive
+      to define a converter for each format we needed to display.  A better approach
+      would be to modify the converters to accept a `format` parameter.  Then we'd be
+      able to specify the format in the binding and get maximum reuse out of our format
+      converters.
+    </markdown>
+
+    <sample src="samples/4" resources.bind="['date-format', 'number-format']"></sample>
+
+    <markdown>
+      With the `format` parameter added to the `toView` methods we are able to
+      specify the format in the binding using the `| [converterName]:[parameterExpression]`
+      syntax:
+
+      ``` markup
+      ${currentDate | dateFormat:'MMMM Mo YYYY'}
+      ${netWorth | numberFormat:'$0.0a'}
+      ```
+
+      ## Binding Converter Parameters
+
+      Converter parameters needn't be literal values.  You can bind parameter values
+      to achieve dynamic results:
+    </markdown>
+
+    <sample src="samples/5" resources.bind="['number-format']"></sample>
+
+
+    <markdown>
       TODO:
-
-      rework examples to use both bind and interpolation
-
-      explain toView
-
-      explain import
-
-      explain the pipe syntax
-
-      introduce converter parameters
-
-      introduce data binding parameters
 
       introduce passing multiple parameters
 
@@ -110,10 +168,13 @@
 
       add ability to copy code samples
 
+      add logic to scroll to url hash
+
       byeeee
     </markdown>
 
     <markdown>
+      ------------------------------------
       # markdown element tests
 
       ## anchors

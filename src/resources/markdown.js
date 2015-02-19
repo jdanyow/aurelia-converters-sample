@@ -37,6 +37,10 @@ function fixIndent(markdown) {
   return markdown;
 }
 
+function fixBlockQuotes(markdown) {
+  return markdown.replace(/^(\s*)&gt;/gim, (match, p1) => p1 + '>');
+}
+
 function updateAnchorTargets(element) {
   // external links need target="_blank"
   var anchors = element.getElementsByTagName('a'),
@@ -88,18 +92,29 @@ export class Markdown {
   static metadata(){
     return Behavior
       .customElement('markdown')
+      .withProperty('value', 'valueChanged')
       .noView()
       .skipContentProcessing();
   }
 
   static inject() { return [Element]; }
   constructor(element) {
-    var markdown = fixIndent(element.innerHTML || '');
+    this.element = element;
     element.className += ' markdown-body';
-    element.innerHTML = getHtml(markdown);
+    this.setContent(element.innerHTML || '');
+  }
 
-    updateAnchorTargets(element);
-    makeHeadingsLinkable(element);
-    applySyntaxHighlighting(element);
+  valueChanged(newValue) {
+    this.setContent(newValue);
+  }
+
+  setContent(markdown) {
+    markdown = fixIndent(markdown);
+    markdown = fixBlockQuotes(markdown);
+    this.element.innerHTML = getHtml(markdown);
+
+    updateAnchorTargets(this.element);
+    makeHeadingsLinkable(this.element);
+    applySyntaxHighlighting(this.element);
   }
 }

@@ -5,7 +5,7 @@ export class Sample {
     return Behavior
       .customElement('sample')
       .withProperty('src')
-      .withProperty('converters');
+      .withProperty('resources');
   }
 
   constructor(element) {

@@ -3,9 +3,9 @@
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <div repeat.for="converter of converters" class="col-md-6">
-        <a href="${$parent.githubBase}/src/${$parent.src}/${converter}.js" target="_blank">${converter} converter:</a>
-        <pre class="line-numbers"><code class="language-javascript" source="src/${$parent.src}/${converter}.js"></code></pre>
+      <div repeat.for="resource of resources" class="col-md-6">
+        <a href="${$parent.githubBase}/src/${$parent.src}/${resource}.js" target="_blank">${resource}:</a>
+        <pre class="line-numbers"><code class="language-javascript" source="src/${$parent.src}/${resource}.js"></code></pre>
       </div>
 
       <div class="col-md-6">
