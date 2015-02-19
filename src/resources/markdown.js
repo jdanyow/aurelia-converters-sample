@@ -94,8 +94,6 @@ export class Markdown {
     element.className += ' markdown-body';
     element.innerHTML = getHtml(markdown);
 
-    // todo: find out if this is causing a bunch of repaints and refactor
-    // to use document fragment or something.
     updateAnchorTargets(element);
     makeHeadingsLinkable(element);
     applySyntaxHighlighting(element);
