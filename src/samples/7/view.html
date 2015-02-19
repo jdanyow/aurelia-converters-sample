@@ -1,10 +1,11 @@
 <template>
   <import from="./rgb-to-hex"></import>
+  <import from="./prepend"></import>
 
   <label for="color">Enter Hex Color</label>
   <input id="color" type="text" value.bind="rgb | rgbToHex" />
 
-  <div style.backgroundColor.bind="rgb | rgbToHex">
-    Aurelia!
+  <div style="background-color: ${rgb | rgbToHex }">
+    R:${rgb.r} G:${rgb.g}, B:${rgb.b}
   </div>
 </template>
