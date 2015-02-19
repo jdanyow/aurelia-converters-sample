@@ -153,19 +153,44 @@
     <sample src="samples/5" resources.bind="['number-format']"></sample>
 
     <markdown>
-      ## Multiple Converter Parameters
+      ## Multiple Converter Parameters and Combining Converters
 
-      Value converters can accept multiple parameters, providing a lot of flexibility
-      and reuse.
+      Value converters can accept multiple parameters and multiple converters
+      can be composed in the same binding expression, providing a lot of
+      flexibility and opportunity for reuse.
+
+      In the following example we have a view model exposing an array of Aurelia
+      repos.  The view uses a repeat binding to list the repos in a table.
+      A `SortValueConverter` is used to sort the array based on two arguments:
+      `propertyName` and `direction`.  A second converter, `TakeValueConverter`
+      accepting a `count` argument is applied to limit the number of repositories
+      listed:
     </markdown>
 
-    <sample src="samples/6" resources.bind="['numeric-sort']"></sample>
+    <markdown value="
+      ``` markup
+      <tr repeat.for=&quot;repo of repos | sort:column.value:direction.value | take:10&quot;>
+      ```">
+    </markdown>
+
+    <markdown>
+      Here's the full example:
+    </markdown>
+
+    <sample src="samples/6" layout="[
+      [
+        { name: 'view-model', type: 'javascript' },
+        { name: 'sort',       type: 'javascript' },
+        { name: 'take',       type: 'javascript' }
+      ],
+      [
+        { name: 'view', type: 'markup' }
+      ]
+    ]"></sample>
 
 
     <markdown>
       TODO:
-
-      introduce piping multiple converters
 
       introduce fromView
 

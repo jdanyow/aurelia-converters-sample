@@ -5,7 +5,8 @@ export class Sample {
     return Behavior
       .customElement('sample')
       .withProperty('src')
-      .withProperty('resources');
+      .withProperty('resources')
+      .withProperty('layout');
   }
 
   constructor(element) {

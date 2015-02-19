@@ -1,21 +1,31 @@
 <template>
   <import from="./source"></import>
+  <import from="./parse-javascript-literal"></import>
 
   <div class="panel panel-default">
     <div class="panel-body">
-      <div repeat.for="resource of resources" class="col-md-6">
-        <a href="${$parent.githubBase}/src/${$parent.src}/${resource}.js" target="_blank">${resource}:</a>
-        <pre class="line-numbers"><code class="language-javascript" source="src/${$parent.src}/${resource}.js"></code></pre>
-      </div>
+      <template if.bind="!layout">
+        <div repeat.for="resource of resources" class="col-md-6">
+          <a href="${$parent.githubBase}/src/${$parent.src}/${resource}.js" target="_blank">${resource}:</a>
+          <pre class="line-numbers"><code class="language-javascript" source="src/${$parent.src}/${resource}.js"></code></pre>
+        </div>
 
-      <div class="col-md-6">
-        <a href="${githubBase}/src/${src}/view-model.js" target="_blank">view-model:</a>
-        <pre class="line-numbers"><code class="language-javascript" source="src/${src}/view-model.js"></code></pre>
-      </div>
+        <div class="col-md-6">
+          <a href="${githubBase}/src/${src}/view-model.js" target="_blank">view-model:</a>
+          <pre class="line-numbers"><code class="language-javascript" source="src/${src}/view-model.js"></code></pre>
+        </div>
 
-      <div class="col-md-6">
-        <a href="${githubBase}/src/${src}/view.html" target="_blank">view:</a>
-        <pre class="line-numbers"><code class="language-markup" source="src/${src}/view.html"></code></pre>
+        <div class="col-md-6">
+          <a href="${githubBase}/src/${src}/view.html" target="_blank">view:</a>
+          <pre class="line-numbers"><code class="language-markup" source="src/${src}/view.html"></code></pre>
+        </div>
+      </template>
+
+      <div if.bind="layout" repeat.for="column of layout | parseJavascriptLiteral" class="col-md-6">
+        <template repeat.for="resource of column">
+          <a href="${$parent.$parent.githubBase}/src/${$parent.$parent.src}/${resource.name}.${resource.type === 'javascript' ? 'js' : 'html'}" target="_blank">${resource.name}:</a>
+          <pre class="line-numbers"><code class="language-${resource.type}" source="src/${$parent.$parent.src}/${resource.name}.${resource.type === 'javascript' ? 'js' : 'html'}"></code></pre>
+        </template>
       </div>
 
       <div class="col-md-12">
