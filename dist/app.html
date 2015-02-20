@@ -8,7 +8,7 @@
       This page is written using Aurelia and contains live examples.  The full
       source is [here](https://github.com/jdanyow/aurelia-converters-sample).
 
-      ## Introduction to Data Binding
+      ## Data Binding
 
       A short description of data-binding from the Aurelia
       [docs](http://aurelia.io/docs.html):
@@ -136,7 +136,7 @@
 
     <markdown>
       With the `format` parameter added to the `toView` methods we are able to
-      specify the format in the binding using the `| [converterName]:[parameterExpression]`
+      specify the format in the binding using the `[expression] | [converterName]:[parameterExpression]`
       syntax:
 
       ``` markup
@@ -153,7 +153,7 @@
     <sample src="samples/5" resources.bind="['number-format']"></sample>
 
     <markdown>
-      ## Multiple Converter Parameters and Combining Converters
+      ## Multiple Parameters / Composing Converters
 
       Value converters can accept multiple parameters and multiple converters
       can be composed in the same binding expression, providing a lot of
@@ -170,6 +170,8 @@
     <markdown value="
       ``` markup
       <tr repeat.for=&quot;repo of repos | sort:column.value:direction.value | take:10&quot;>
+        ...
+      </tr>
       ```">
     </markdown>
 
@@ -190,98 +192,45 @@
 
     <markdown>
       ## Bi-directional Value Converters
+
+      So far we've been using converters with one-way bindings.  The data flows
+      in a single direction, from the model to the view.  When using a converter
+      in an input element's `value` binding we need a way to convert the user's
+      data entry to the format expected by the view model.  This is where the
+      value converter's `fromView` method comes into play, taking the element's
+      value and converting it to the format expected by the view model.
+
+      In the example below we have a view model that exposes colors in an object
+      format, with properties for the red, green and blue components.  In the view
+      we want to bind this color object to an HTML5 color input.
+      The color input expects hex format text so we'll use an `RgbToHexValueConverter`
+      to facilitate the binding.
     </markdown>
 
-    <sample src="samples/7"></sample>
+    <sample src="samples/7" resources.bind="['rgb-to-hex']"></sample>
 
     <markdown>
-      TODO:
+      ## Globally Accessible Value Converters
 
-      explain packaging as an internal plugin
+      In all our examples we've been importing the converters we need in our view.
+      There's an easier way.  If you have some commonly used value converters that
+      you'd like to make globally available, use the Aurelia's `withResources`
+      function to register them.  This will free you from writing import statements
+      at the top of every view.
 
-      explain packaging as an external plugin
+      A typical Aurelia app keeps it's global resources
+      (converters, behaviors, custom elements) in a resources subfolder.  An `index.js`
+      file in the resources folder is responsible for importing and registering them
+      using Aurelia's `withResources` method.
 
-      add ability to copy code samples
-
-      add logic to scroll to url hash
-
-      byeeee
+      The resources must be installed before the Aurelia application starts so you'll
+      need to use `aurelia-main` style bootstrapping if you haven't done so already.
+      This is very easy, in your index.html, change the body element's `aurelia-app`
+      attribute to `aurelia-main`.  Then add a `main.js` file like the one in the example
+      below.
     </markdown>
 
-    <markdown>
-      ------------------------------------
-      # markdown element tests
+    <sample src="samples/8" resources.bind="['resources/index', 'main']" noview="true"></sample>
 
-      ## anchors
-
-      An [external](http://www.google.com) link.
-
-      An [internal](#markdown-element-tests) link.
-
-      ## inline code
-
-      `inline code`
-
-      ## indented code
-
-      code indent:
-
-          for(var i = 0; i < 3; i++) {
-
-          }
-
-      code indent:
-
-          <div></div>
-          <a></a>
-          <!-- adsfasfd -->
-
-      ## back-tic code
-
-      js:
-      ``` javascript
-      for(var i = 0; i < 3; i++) {
-
-      }
-      ```
-
-      markup:
-      ``` markup
-      <div></div>
-      <a></a>
-      <!-- adsfasfd -->
-      ```
-
-      bash:
-      ``` bash
-      npm install
-      jspm install aurelia-framework
-      ```
-
-      git:
-      ``` git
-      git add -A
-      git commit -m "saved the day"
-      git push
-      ```
-
-      css:
-      ``` css
-      .hidden {
-        display: none;
-      }
-      ```
-
-      ## headings
-
-      ### h3
-
-      #### h4
-
-      ##### h5
-
-      ###### h6
-
-    </markdown>
   </div>
 </template>

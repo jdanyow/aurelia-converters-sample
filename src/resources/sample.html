@@ -10,12 +10,12 @@
           <pre class="line-numbers"><code class="language-javascript" source="src/${$parent.src}/${resource}.js"></code></pre>
         </div>
 
-        <div class="col-md-6">
+        <div if.bind="!noview" class="col-md-6">
           <a href="${githubBase}/src/${src}/view-model.js" target="_blank">view-model:</a>
           <pre class="line-numbers"><code class="language-javascript" source="src/${src}/view-model.js"></code></pre>
         </div>
 
-        <div class="col-md-6">
+        <div if.bind="!noview" class="col-md-6">
           <a href="${githubBase}/src/${src}/view.html" target="_blank">view:</a>
           <pre class="line-numbers"><code class="language-markup" source="src/${src}/view.html"></code></pre>
         </div>
@@ -28,7 +28,7 @@
         </template>
       </div>
 
-      <div class="col-md-12">
+      <div if.bind="!noview" class="col-md-12">
         <strong>result:</strong>
         <div class="well">
           <compose view-model="../${src}/view-model" view="../${src}/view.html"></compose>

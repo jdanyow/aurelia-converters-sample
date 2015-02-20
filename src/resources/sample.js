@@ -6,7 +6,8 @@ export class Sample {
       .customElement('sample')
       .withProperty('src')
       .withProperty('resources')
-      .withProperty('layout');
+      .withProperty('layout')
+      .withProperty('noview');
   }
 
   constructor(element) {
