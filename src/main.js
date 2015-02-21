@@ -12,7 +12,6 @@ export function configure(aurelia) {
     .router()
     .eventAggregator()
     .plugin('./resources/index');
-    //.plugin('aurelia-converters');
 
   aurelia.start().then(a => a.setRoot('app', document.body));
 }

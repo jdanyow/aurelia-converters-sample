@@ -81,7 +81,16 @@
       will take care of the heavy lifting, we just need to wire things up...
     </markdown>
 
-    <sample src="samples/3" resources.bind="['date-format', 'currency-format']"></sample>
+    <sample src="samples/3" layout="[
+      [
+        { name: 'date-format',     type: 'javascript' },
+        { name: 'currency-format', type: 'javascript' }
+      ],
+      [
+        { name: 'view-model', type: 'javascript' },
+        { name: 'view',       type: 'markup' }
+      ]
+    ]"></sample>
 
     <markdown>
       OK, the result looks much better but how did this all work?
@@ -150,7 +159,15 @@
       to achieve dynamic results:
     </markdown>
 
-    <sample src="samples/5" resources.bind="['number-format']"></sample>
+    <sample src="samples/5" layout="[
+      [
+        { name: 'number-format', type: 'javascript' },
+        { name: 'view-model',    type: 'javascript' }
+      ],
+      [
+        { name: 'view',       type: 'markup' }
+      ]
+    ]"></sample>
 
     <markdown>
       ## Multiple Parameters / Composing Converters
