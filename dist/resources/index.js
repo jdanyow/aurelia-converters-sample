@@ -1,28 +1,30 @@
-System.register(["./sample", "./markdown", "./source", "./example", "./settings"], function (_export) {
+System.register(["./markdown", "./source", "./example", "./example-context", "./column", "./file"], function (_export) {
   "use strict";
 
-  var Sample, Markdown, Source, Example, Settings;
+  var Markdown, Source, Example, ExampleContext, Column, File;
   _export("install", install);
 
   function install(aurelia) {
     aurelia.withResources(Markdown, Source);
 
-    aurelia.container.registerInstance(Settings, new Settings("https://github.com/jdanyow/aurelia-converters-sample/blob/gh-pages"));
-    aurelia.withResources(Example);
+    aurelia.container.registerInstance(ExampleContext, new ExampleContext("https://github.com/jdanyow/aurelia-converters-sample/blob/gh-pages"));
+    aurelia.withResources(Markdown, Source, Example, Column, File);
   }
   return {
-    setters: [function (_sample) {
-      Sample = _sample.Sample;
-    }, function (_markdown) {
+    setters: [function (_markdown) {
       Markdown = _markdown.Markdown;
     }, function (_source) {
       Source = _source.Source;
     }, function (_example) {
       Example = _example.Example;
-    }, function (_settings) {
-      Settings = _settings.Settings;
+    }, function (_exampleContext) {
+      ExampleContext = _exampleContext.ExampleContext;
+    }, function (_column) {
+      Column = _column.Column;
+    }, function (_file) {
+      File = _file.File;
     }],
     execute: function () {}
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7TUFBUSxNQUFNLEVBQ04sUUFBUSxFQUNSLE1BQU0sRUFFTixPQUFPLEVBQ1AsUUFBUTtxQkFFQSxPQUFPOztBQUFoQixXQUFTLE9BQU8sQ0FBQyxPQUFPLEVBQUU7QUFDL0IsV0FBTyxDQUFDLGFBQWEsQ0FBQyxRQUFRLEVBQUUsTUFBTSxDQUFDLENBQUM7O0FBRXhDLFdBQU8sQ0FBQyxTQUFTLENBQUMsZ0JBQWdCLENBQ2hDLFFBQVEsRUFDUixJQUFJLFFBQVEsQ0FBQyxvRUFBb0UsQ0FBQyxDQUFDLENBQUE7QUFDckYsV0FBTyxDQUFDLGFBQWEsQ0FBQyxPQUFPLENBQUMsQ0FBQztHQUNoQzs7O0FBZE8sWUFBTSxXQUFOLE1BQU07O0FBQ04sY0FBUSxhQUFSLFFBQVE7O0FBQ1IsWUFBTSxXQUFOLE1BQU07O0FBRU4sYUFBTyxZQUFQLE9BQU87O0FBQ1AsY0FBUSxhQUFSLFFBQVEiLCJmaWxlIjoicmVzb3VyY2VzL2luZGV4LmpzIiwic291cmNlUm9vdCI6Ii9zcmMvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9pbmRleC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7TUFBUSxRQUFRLEVBQ1IsTUFBTSxFQUNOLE9BQU8sRUFDUCxjQUFjLEVBQ2QsTUFBTSxFQUNOLElBQUk7cUJBRUksT0FBTzs7QUFBaEIsV0FBUyxPQUFPLENBQUMsT0FBTyxFQUFFO0FBQy9CLFdBQU8sQ0FBQyxhQUFhLENBQUMsUUFBUSxFQUFFLE1BQU0sQ0FBQyxDQUFDOztBQUV4QyxXQUFPLENBQUMsU0FBUyxDQUFDLGdCQUFnQixDQUNoQyxjQUFjLEVBQ2QsSUFBSSxjQUFjLENBQUMsb0VBQW9FLENBQUMsQ0FBQyxDQUFBO0FBQzNGLFdBQU8sQ0FBQyxhQUFhLENBQUMsUUFBUSxFQUFFLE1BQU0sRUFBRSxPQUFPLEVBQUUsTUFBTSxFQUFFLElBQUksQ0FBQyxDQUFDO0dBQ2hFOzs7QUFkTyxjQUFRLGFBQVIsUUFBUTs7QUFDUixZQUFNLFdBQU4sTUFBTTs7QUFDTixhQUFPLFlBQVAsT0FBTzs7QUFDUCxvQkFBYyxtQkFBZCxjQUFjOztBQUNkLFlBQU0sV0FBTixNQUFNOztBQUNOLFVBQUksU0FBSixJQUFJIiwiZmlsZSI6InJlc291cmNlcy9pbmRleC5qcyIsInNvdXJjZVJvb3QiOiIvc3JjLyJ9
