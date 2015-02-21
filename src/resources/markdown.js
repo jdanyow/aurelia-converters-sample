@@ -79,9 +79,9 @@ function applySyntaxHighlighting(element) {
     if (!/language-/.test(codes[i].className))
       codes[i].className += ' language-javascript';
 
-    // make sure the parent pre has the line-numbers class.
-    if (!/line-numbers/.test(codes[i].parentNode.className))
-      codes[i].parentNode.className += ' line-numbers';
+    // // make sure the parent pre has the line-numbers class.
+    // if (!/line-numbers/.test(codes[i].parentNode.className))
+    //   codes[i].parentNode.className += ' line-numbers';
 
     // apply syntax highlighting.
     Prism.highlightElement(codes[i]);
