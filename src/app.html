@@ -29,7 +29,14 @@
       and **interpolation** (`${expression}`) techniques:
     </markdown>
 
-    <sample src="samples/1"></sample>
+    <example base="examples/1">
+      <column>
+        <view-model></view-model>
+      </column>
+      <column>
+        <view></view>
+      </column>
+    </example>
 
     <markdown>
       ### Binding Dates and Numbers
@@ -39,7 +46,14 @@
       common scenarios:
     </markdown>
 
-    <sample src="samples/2"></sample>
+    <example base="examples/2">
+      <column>
+        <view-model></view-model>
+      </column>
+      <column>
+        <view></view>
+      </column>
+    </example>
 
     <markdown>
       Ideally the date would be in a more readable format and the amount would
@@ -81,16 +95,16 @@
       will take care of the heavy lifting, we just need to wire things up...
     </markdown>
 
-    <sample src="samples/3" layout="[
-      [
-        { name: 'date-format',     type: 'javascript' },
-        { name: 'currency-format', type: 'javascript' }
-      ],
-      [
-        { name: 'view-model', type: 'javascript' },
-        { name: 'view',       type: 'markup' }
-      ]
-    ]"></sample>
+    <example base="examples/3">
+      <column>
+        <file src="date-format.js"></file>
+        <file src="currency-format.js"></file>
+      </column>
+      <column>
+        <view-model></view-model>
+        <view></view>
+      </column>
+    </example>
 
     <markdown>
       OK, the result looks much better but how did this all work?
@@ -141,7 +155,16 @@
       converters.
     </markdown>
 
-    <sample src="samples/4" resources.bind="['date-format', 'number-format']"></sample>
+    <example base="examples/4">
+      <column>
+        <file src="date-format.js"></file>
+        <view-model></view-model>
+      </column>
+      <column>
+        <file src="number-format.js"></file>
+        <view></view>
+      </column>
+    </example>
 
     <markdown>
       With the `format` parameter added to the `toView` methods we are able to
@@ -159,15 +182,15 @@
       to achieve dynamic results:
     </markdown>
 
-    <sample src="samples/5" layout="[
-      [
-        { name: 'number-format', type: 'javascript' },
-        { name: 'view-model',    type: 'javascript' }
-      ],
-      [
-        { name: 'view',       type: 'markup' }
-      ]
-    ]"></sample>
+    <example base="examples/5">
+      <column>
+        <file src="number-format.js"></file>
+        <view-model></view-model>
+      </column>
+      <column>
+        <view></view>
+      </column>
+    </example>
 
     <markdown>
       ## Multiple Parameters / Composing Converters
@@ -196,16 +219,16 @@
       Here's the full example:
     </markdown>
 
-    <sample src="samples/6" layout="[
-      [
-        { name: 'view-model', type: 'javascript' },
-        { name: 'sort',       type: 'javascript' },
-        { name: 'take',       type: 'javascript' }
-      ],
-      [
-        { name: 'view', type: 'markup' }
-      ]
-    ]"></sample>
+    <example base="examples/6">
+      <column>
+        <view-model></view-model>
+        <file src="sort.js"></file>
+        <file src="take.js"></file>
+      </column>
+      <column>
+        <view></view>
+      </column>
+    </example>
 
     <markdown>
       ## Bi-directional Value Converters
@@ -224,7 +247,15 @@
       to facilitate the binding.
     </markdown>
 
-    <sample src="samples/7" resources.bind="['rgb-to-hex']"></sample>
+    <example base="examples/7">
+      <column>
+        <file src="rgb-to-hex.js"></file>
+      </column>
+      <column>
+        <view-model></view-model>
+        <view></view>
+      </column>
+    </example>
 
     <markdown>
       ## Globally Accessible Value Converters
@@ -247,7 +278,14 @@
       below.
     </markdown>
 
-    <sample src="samples/8" resources.bind="['resources/index', 'main']" noview="true"></sample>
+    <example base="examples/8">
+      <column>
+        <file src="resources/index.js"></file>
+      </column>
+      <column>
+        <file src="main.js"></file>
+      </column>
+    </example>
 
     <markdown>
       *Note: the `withResources` API is slated to change in the near future.  Stay

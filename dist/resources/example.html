@@ -1,0 +1,24 @@
+<import from="../source"></import>
+
+<template>
+  <div class="panel panel-default">
+    <div class="panel-body">
+      <div class="row">
+        <div repeat.for="files of columns" class="col-md-6">
+          <template repeat.for="file of files">
+            <a href="${file.repoUrl}" target="_blank">${file.name}</a>
+            <pre><code class="language-${file.language}" source="${file.url}"></code></pre>
+          </template>
+        </div>
+      </div>
+      <div class="row" if.bind="result">
+        <div class="col-md-12">
+          <strong>result:</strong>
+          <div class="well">
+            <compose view-model="../${viewModel.moduleId}" view="../${view.moduleId}.html"></compose>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</template>
