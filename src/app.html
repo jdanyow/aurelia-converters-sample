@@ -262,18 +262,18 @@
 
       In all our examples we've been importing the converters we need in our view.
       There's an easier way.  If you have some commonly used value converters that
-      you'd like to make globally available, use the Aurelia's `withResources`
+      you'd like to make globally available, use Aurelia's `withResources`
       function to register them.  This will free you from writing import statements
       at the top of every view.
 
-      A typical Aurelia app keeps it's global resources
+      A typical Aurelia app keeps its global resources
       (converters, behaviors, custom elements) in a resources subfolder.  An `index.js`
       file in the resources folder is responsible for importing and registering them
       using Aurelia's `withResources` method.
 
       The resources must be installed before the Aurelia application starts so you'll
       need to use `aurelia-main` style bootstrapping if you haven't done so already.
-      This is very easy, in your index.html, change the body element's `aurelia-app`
+      This is very easy: in your index.html, change the body element's `aurelia-app`
       attribute to `aurelia-main`.  Then add a `main.js` file like the one in the example
       below.
     </markdown>
