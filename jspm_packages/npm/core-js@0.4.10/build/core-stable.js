@@ -770,7 +770,7 @@
               then,
               wrapper;
           if (def.done)
-            return;
+            return ;
           def.done = true;
           def = def.def || def;
           try {
@@ -795,7 +795,7 @@
         function reject(msg) {
           var def = this;
           if (def.done)
-            return;
+            return ;
           def.done = true;
           def = def.def || def;
           def.msg = msg;
@@ -1167,7 +1167,7 @@
             step;
         while (!(step = iterator.next()).done) {
           if ((entries ? invoke(f, step.value) : f(step.value)) === false)
-            return;
+            return ;
         }
       };
       $for.isIterable = isIterable = function(it) {

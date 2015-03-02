@@ -1,7 +1,7 @@
 /* */ 
 (function(Buffer) {
   var assert = require("assert");
-  var util = require("..\..\util.js");
+  var util = require("../../util");
   suite('is');
   test('util.isArray', function() {
     assert.equal(true, util.isArray([]));

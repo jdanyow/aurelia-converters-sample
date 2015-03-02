@@ -1,11 +1,11 @@
 /* */ 
 (function(process) {
-  var Buffer = require("..\..\index.js").Buffer;
+  var Buffer = require("../../../buffer@3.0.3").Buffer;
   if (process.env.OBJECT_IMPL)
     Buffer.TYPED_ARRAY_SUPPORT = false;
   var assert = require("assert");
-  var Buffer = require("..\..\index.js").Buffer;
-  var SlowBuffer = require("..\..\index.js").SlowBuffer;
+  var Buffer = require("../../../buffer@3.0.3").Buffer;
+  var SlowBuffer = require("../../../buffer@3.0.3").SlowBuffer;
   var smalloc = {kMaxLength: 0x3FFFFFFF};
   var cntr = 0;
   var b = Buffer(1024);

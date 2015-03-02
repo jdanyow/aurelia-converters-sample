@@ -1,6 +1,6 @@
 /* */ 
 (function(process) {
-  var Buffer = require("..\..\index.js").Buffer;
+  var Buffer = require("../../../buffer@3.0.3").Buffer;
   if (process.env.OBJECT_IMPL)
     Buffer.TYPED_ARRAY_SUPPORT = false;
   var assert = require("assert");

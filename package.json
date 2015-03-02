@@ -23,7 +23,7 @@
     "conventional-changelog": "0.0.11",
     "del": "^1.1.0",
     "gulp": "^3.8.10",
-    "gulp-6to5": "^3.0.0",
+    "gulp-babel": "^4.0.0",
     "gulp-bump": "^0.1.11",
     "gulp-changed": "^1.1.0",
     "gulp-jshint": "^1.9.0",
@@ -34,9 +34,9 @@
     "jasmine-core": "^2.1.3",
     "jshint-stylish": "^1.0.0",
     "karma": "^0.12.28",
-    "karma-6to5-preprocessor": "^3.0.0",
+    "karma-babel-preprocessor": "^4.0.0",
     "karma-chrome-launcher": "^0.1.7",
-    "karma-jasmine": "^0.3.2",
+    "karma-jasmine": "^0.3.5",
     "karma-jspm": "^1.0.1",
     "object.assign": "^1.0.3",
     "require-dir": "^0.1.0",
@@ -46,17 +46,16 @@
   },
   "jspm": {
     "dependencies": {
-      "aurelia-bootstrapper": "^0.9.1",
-      "aurelia-dependency-injection": "^0.4.1",
-      "aurelia-framework": "^0.8.4",
-      "aurelia-http-client": "^0.5.1",
-      "aurelia-router": "^0.5.1",
-      "bootstrap": "^3.3.1",
+      "aurelia-bootstrapper": "github:aurelia/bootstrapper@^0.9.5",
+      "aurelia-dependency-injection": "github:aurelia/dependency-injection@^0.4.5",
+      "aurelia-framework": "github:aurelia/framework@^0.8.8",
+      "aurelia-http-client": "github:aurelia/http-client@^0.5.5",
+      "aurelia-router": "github:aurelia/router@^0.5.8",
+      "bootstrap": "github:twbs/bootstrap@^3.3.1",
       "commonmark": "npm:commonmark@^0.17.1",
-      "font-awesome": "^4.3.0",
+      "font-awesome": "npm:font-awesome@^4.3.0",
       "moment": "npm:moment@^2.9.0",
-      "numeral": "npm:numeral@^1.5.3",
-      "remarkable": "npm:remarkable@^1.6.0"
+      "numeral": "npm:numeral@^1.5.3"
     }
   }
 }

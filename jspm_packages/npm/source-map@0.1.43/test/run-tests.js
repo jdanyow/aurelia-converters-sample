@@ -3,7 +3,7 @@
   var assert = require("assert");
   var fs = require("fs");
   var path = require("path");
-  var util = require("./source-map\util");
+  var util = require("./source-map/util");
   function run(tests) {
     var total = 0;
     var passed = 0;

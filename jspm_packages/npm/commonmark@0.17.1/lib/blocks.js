@@ -144,7 +144,7 @@
         return 0;
       },
       finalize: function() {
-        return;
+        return ;
       },
       canContain: function(t) {
         return (t !== 'Item');
@@ -192,7 +192,7 @@
         return 0;
       },
       finalize: function() {
-        return;
+        return ;
       },
       canContain: function(t) {
         return (t !== 'Item');
@@ -211,7 +211,7 @@
         return 0;
       },
       finalize: function() {
-        return;
+        return ;
       },
       canContain: function(t) {
         return (t !== 'Item');
@@ -223,7 +223,7 @@
         return 1;
       },
       finalize: function() {
-        return;
+        return ;
       },
       canContain: function() {
         return false;
@@ -235,7 +235,7 @@
         return 1;
       },
       finalize: function() {
-        return;
+        return ;
       },
       canContain: function() {
         return false;
@@ -355,7 +355,7 @@
           break;
         case 2:
           this.lastLineLength = ln.length;
-          return;
+          return ;
         default:
           throw 'continue returned illegal value, must be 0, 1, or 2';
       }

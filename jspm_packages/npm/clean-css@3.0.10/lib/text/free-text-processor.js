@@ -1,7 +1,7 @@
 /* */ 
 (function(process) {
   var EscapeStore = require("./escape-store");
-  var QuoteScanner = require("..\utils\quote-scanner.js");
+  var QuoteScanner = require("../utils/quote-scanner");
   var lineBreak = require("os").EOL;
   function FreeTextProcessor(saveWaypoints) {
     this.matches = new EscapeStore('FREE_TEXT');

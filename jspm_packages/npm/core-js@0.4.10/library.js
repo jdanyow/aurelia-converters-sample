@@ -487,7 +487,7 @@
           step;
       while (!(step = iterator.next()).done)
         if (stepCall(f, step.value, entries) === false)
-          return;
+          return ;
     }
     var NODE = cof(process) == PROCESS,
         core = {},
@@ -1111,7 +1111,7 @@
               then,
               wrapper;
           if (def.done)
-            return;
+            return ;
           def.done = true;
           def = def.def || def;
           try {
@@ -1136,7 +1136,7 @@
         function reject(msg) {
           var def = this;
           if (def.done)
-            return;
+            return ;
           def.done = true;
           def = def.def || def;
           def.msg = msg;

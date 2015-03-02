@@ -391,7 +391,7 @@
     return arg === null || typeof arg === 'boolean' || typeof arg === 'number' || typeof arg === 'string' || typeof arg === 'symbol' || typeof arg === 'undefined';
   }
   exports.isPrimitive = isPrimitive;
-  exports.isBuffer = require("./support\isBuffer");
+  exports.isBuffer = require("./support/isBufferBrowser");
   function objectToString(o) {
     return Object.prototype.toString.call(o);
   }

@@ -1,6 +1,6 @@
 /* */ 
 (function(process) {
-  var B = require("..\index.js").Buffer;
+  var B = require("../../buffer@3.0.3").Buffer;
   var test = require("tape");
   var isnan = require("is-nan");
   if (process.env.OBJECT_IMPL)
@@ -53,7 +53,7 @@
     if (!B.TYPED_ARRAY_SUPPORT) {
       t.pass('object impl: skipping overflow test');
       t.end();
-      return;
+      return ;
     }
     t.plan(3 * (2 * 2 * 2 + 2));
     var hex = ['', '03', '00', '030000', '000000', '', 'fd', 'ff', 'fdffff', 'ffffff'];

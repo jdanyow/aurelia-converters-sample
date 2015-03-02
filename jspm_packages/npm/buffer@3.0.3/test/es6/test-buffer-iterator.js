@@ -1,8 +1,8 @@
 /* */ 
 (function(process) {
-  var Buffer = require("..\..\index.js").Buffer;
+  var Buffer = require("../../../buffer@3.0.3").Buffer;
   if (process.env.OBJECT_IMPL)
-    return;
+    return ;
   var assert = require("assert");
   var buffer = new Buffer([1, 2, 3, 4, 5]);
   var arr;

@@ -1,0 +1,1 @@
+module.exports = require("github:aurelia/html-template-element@0.1.3/HTMLTemplateElement.min");

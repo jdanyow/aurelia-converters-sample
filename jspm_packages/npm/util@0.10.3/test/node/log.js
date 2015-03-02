@@ -1,7 +1,7 @@
 /* */ 
 (function(process) {
   var assert = require("assert");
-  var util = require("..\..\util.js");
+  var util = require("../../util");
   assert.ok(process.stdout.writable);
   assert.ok(process.stderr.writable);
   var stdout_write = global.process.stdout.write;

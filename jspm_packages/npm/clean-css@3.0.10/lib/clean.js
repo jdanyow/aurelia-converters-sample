@@ -1,18 +1,18 @@
 /* */ 
 (function(process) {
-  var ImportInliner = require("./imports\inliner");
-  var UrlRebase = require("./images\url-rebase");
-  var SelectorsOptimizer = require("./selectors\optimizer");
-  var Stringifier = require("./selectors\stringifier");
-  var SourceMapStringifier = require("./selectors\source-map-stringifier");
-  var CommentsProcessor = require("./text\comments-processor");
-  var ExpressionsProcessor = require("./text\expressions-processor");
-  var FreeTextProcessor = require("./text\free-text-processor");
-  var UrlsProcessor = require("./text\urls-processor");
-  var Compatibility = require("./utils\compatibility");
-  var InputSourceMapTracker = require("./utils\input-source-map-tracker");
-  var SourceTracker = require("./utils\source-tracker");
-  var SourceReader = require("./utils\source-reader");
+  var ImportInliner = require("./imports/inliner");
+  var UrlRebase = require("./images/url-rebase");
+  var SelectorsOptimizer = require("./selectors/optimizer");
+  var Stringifier = require("./selectors/stringifier");
+  var SourceMapStringifier = require("./selectors/source-map-stringifier");
+  var CommentsProcessor = require("./text/comments-processor");
+  var ExpressionsProcessor = require("./text/expressions-processor");
+  var FreeTextProcessor = require("./text/free-text-processor");
+  var UrlsProcessor = require("./text/urls-processor");
+  var Compatibility = require("./utils/compatibility");
+  var InputSourceMapTracker = require("./utils/input-source-map-tracker");
+  var SourceTracker = require("./utils/source-tracker");
+  var SourceReader = require("./utils/source-reader");
   var DEFAULT_TIMEOUT = 5000;
   var CleanCSS = module.exports = function CleanCSS(options) {
     options = options || {};

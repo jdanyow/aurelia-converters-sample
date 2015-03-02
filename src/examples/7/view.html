@@ -1,7 +1,12 @@
 <template>
-  <import from="./rgb-to-hex"></import>
+  <import from="./sort"></import>
 
-  <label for="color">Select Color:</label>
-  <input id="color" type="color" value.bind="rgb | rgbToHex" />
-  <br/> r: ${rgb.r}, g:${rgb.g}, b:${rgb.b}
+  <div class="row">
+    <div class="col-sm-3"
+         repeat.for="repo of repos | sort: { propertyName: 'open_issues', direction: 'descending' }">
+      <a href="${repo.html_url}/issues" target="_blank">
+        ${repo.name} (${repo.open_issues})
+      </a>
+    </div>
+  </div>
 </template>

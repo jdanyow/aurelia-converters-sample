@@ -1,1 +1,0 @@
-module.exports = require("npm:argparse@0.1.16/index");

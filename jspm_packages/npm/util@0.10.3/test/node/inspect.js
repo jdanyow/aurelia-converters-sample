@@ -1,6 +1,6 @@
 /* */ 
 var assert = require("assert");
-var util = require("..\..\util.js");
+var util = require("../../util");
 var Date2 = require("vm").runInNewContext('Date');
 var d = new Date2();
 var orig = util.inspect(d);

@@ -1,9 +1,9 @@
 /* */ 
 var CleanUp = require("./clean-up");
-var Splitter = require("..\..\utils\splitter.js");
-var RGB = require("..\..\colors\rgb.js");
-var HSL = require("..\..\colors\hsl.js");
-var HexNameShortener = require("..\..\colors\hex-name-shortener.js");
+var Splitter = require("../../utils/splitter");
+var RGB = require("../../colors/rgb");
+var HSL = require("../../colors/hsl");
+var HexNameShortener = require("../../colors/hex-name-shortener");
 var DEFAULT_ROUNDING_PRECISION = 2;
 var CHARSET_TOKEN = '@charset';
 var CHARSET_REGEXP = new RegExp('^' + CHARSET_TOKEN, 'i');

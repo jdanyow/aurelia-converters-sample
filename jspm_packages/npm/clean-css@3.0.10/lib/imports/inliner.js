@@ -5,9 +5,9 @@
   var http = require("http");
   var https = require("https");
   var url = require("url");
-  var UrlRewriter = require("..\images\url-rewriter.js");
-  var Splitter = require("..\utils\splitter.js");
-  var override = require("..\utils\object.js").override;
+  var UrlRewriter = require("../images/url-rewriter");
+  var Splitter = require("../utils/splitter");
+  var override = require("../utils/object").override;
   var MAP_MARKER = /\/\*# sourceMappingURL=(\S+) \*\//;
   var REMOTE_RESOURCE = /^(https?:)?\/\//;
   function ImportInliner(context) {

@@ -1,6 +1,6 @@
 /* */ 
 var EscapeStore = require("./escape-store");
-var QuoteScanner = require("..\utils\quote-scanner.js");
+var QuoteScanner = require("../utils/quote-scanner");
 var SPECIAL_COMMENT_PREFIX = '/*!';
 var COMMENT_PREFIX = '/*';
 var COMMENT_SUFFIX = '*/';

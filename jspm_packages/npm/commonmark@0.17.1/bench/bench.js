@@ -4,7 +4,7 @@
   var Benchmark = require("benchmark").Benchmark;
   var suite = new Benchmark.Suite();
   var fs = require("fs");
-  var commonmark = require("..\lib\index.js");
+  var commonmark = require("../lib/index");
   var Showdown = require("showdown");
   var marked = require("marked");
   var markdownit = require("markdown-it")('commonmark');

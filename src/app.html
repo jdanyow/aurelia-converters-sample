@@ -231,6 +231,28 @@
     </example>
 
     <markdown>
+      ## Object Parameters
+
+      Aurelia supports object converter parameters.  An alternate implementation
+      of the `SortValueConverter` using a single `config` parameter would look like
+      this:
+    </markdown>
+
+    <example base="examples/7">
+      <column>
+        <file src="sort.js"></file>
+        <file src="view-model.js" model="true"></file>
+      </column>
+      <column>
+        <file src="view.html" view="true"></file>
+      </column>
+    </example>
+
+    <markdown>
+      There are a couple of advantages to this approach: you don't need to remember
+      the order of the converter parameter arguments and anyone reading the markup
+      can easily tell what each converter parameter represents.
+
       ## Bi-directional Value Converters
 
       So far we've been using converters with one-way bindings.  The data flows
@@ -247,7 +269,7 @@
       to facilitate the binding.
     </markdown>
 
-    <example base="examples/7">
+    <example base="examples/8">
       <column>
         <file src="rgb-to-hex.js"></file>
       </column>
@@ -278,7 +300,7 @@
       below.
     </markdown>
 
-    <example base="examples/8">
+    <example base="examples/9">
       <column>
         <file src="resources/index.js"></file>
       </column>

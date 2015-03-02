@@ -4,9 +4,9 @@ if (typeof define !== 'function') {
   var define = require("amdefine")(module, require);
 }
 define(function(require, exports, module) {
-  var SourceMapGenerator = require("..\..\lib\source-map\source-map-generator.js").SourceMapGenerator;
-  var SourceMapConsumer = require("..\..\lib\source-map\source-map-consumer.js").SourceMapConsumer;
-  var SourceNode = require("..\..\lib\source-map\source-node.js").SourceNode;
+  var SourceMapGenerator = require("../../lib/source-map/source-map-generator").SourceMapGenerator;
+  var SourceMapConsumer = require("../../lib/source-map/source-map-consumer").SourceMapConsumer;
+  var SourceNode = require("../../lib/source-map/source-node").SourceNode;
   var util = require("./util");
   exports['test some simple stuff'] = function(assert, util) {
     var map = new SourceMapGenerator({

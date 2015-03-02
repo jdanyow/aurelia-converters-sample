@@ -1,1 +1,0 @@
-module.exports = require("npm:underscore.string@2.4.0/lib/underscore.string");

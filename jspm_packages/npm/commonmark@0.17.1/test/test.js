@@ -2,7 +2,7 @@
 (function(process) {
   "use strict";
   var fs = require("fs");
-  var commonmark = require("..\lib\index.js");
+  var commonmark = require("../lib/index");
   var testfile = process.argv[2] || 'test/spec.txt';
   var escSeq = function(s) {
     return function() {

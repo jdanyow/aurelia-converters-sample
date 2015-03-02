@@ -1,18 +1,39 @@
-System.register([], function (_export) {
+System.register(["aurelia-http-client"], function (_export) {
   "use strict";
 
-  var _classCallCheck, Color;
+  var HttpClient, _prototypeProperties, _classCallCheck, AureliaRepositories;
   return {
-    setters: [],
+    setters: [function (_aureliaHttpClient) {
+      HttpClient = _aureliaHttpClient.HttpClient;
+    }],
     execute: function () {
+      _prototypeProperties = function (child, staticProps, instanceProps) { if (staticProps) Object.defineProperties(child, staticProps); if (instanceProps) Object.defineProperties(child.prototype, instanceProps); };
+
       _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
 
-      Color = _export("Color", function Color() {
-        _classCallCheck(this, Color);
+      AureliaRepositories = _export("AureliaRepositories", (function () {
+        function AureliaRepositories() {
+          _classCallCheck(this, AureliaRepositories);
 
-        this.rgb = { r: 146, g: 39, b: 143 };
-      });
+          this.repos = [];
+        }
+
+        _prototypeProperties(AureliaRepositories, null, {
+          activate: {
+            value: function activate() {
+              var _this = this;
+              return new HttpClient().get("https://api.github.com/orgs/aurelia/repos").then(function (response) {
+                return _this.repos = response.content;
+              });
+            },
+            writable: true,
+            configurable: true
+          }
+        });
+
+        return AureliaRepositories;
+      })());
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4YW1wbGVzLzcvdmlldy1tb2RlbC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7dUJBQWEsS0FBSzs7Ozs7O0FBQUwsV0FBSyxvQkFDTCxTQURBLEtBQUs7OEJBQUwsS0FBSzs7QUFFZCxZQUFJLENBQUMsR0FBRyxHQUFHLEVBQUUsQ0FBQyxFQUFFLEdBQUcsRUFBRSxDQUFDLEVBQUUsRUFBRSxFQUFFLENBQUMsRUFBRSxHQUFHLEVBQUUsQ0FBQztPQUN0QyIsImZpbGUiOiJleGFtcGxlcy83L3ZpZXctbW9kZWwuanMiLCJzb3VyY2VSb290IjoiL3NyYy8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4YW1wbGVzLzcvdmlldy1tb2RlbC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7TUFBUSxVQUFVLHlDQUVMLG1CQUFtQjs7O0FBRnhCLGdCQUFVLHNCQUFWLFVBQVU7Ozs7Ozs7QUFFTCx5QkFBbUI7QUFDbkIsaUJBREEsbUJBQW1CO2dDQUFuQixtQkFBbUI7O0FBRTVCLGNBQUksQ0FBQyxLQUFLLEdBQUcsRUFBRSxDQUFDO1NBQ2pCOzs2QkFIVSxtQkFBbUI7QUFLOUIsa0JBQVE7bUJBQUEsb0JBQUc7O0FBQ1QscUJBQU8sSUFBSSxVQUFVLEVBQUUsQ0FDcEIsR0FBRyxDQUFDLDJDQUEyQyxDQUFDLENBQ2hELElBQUksQ0FBQyxVQUFBLFFBQVE7dUJBQUksTUFBSyxLQUFLLEdBQUcsUUFBUSxDQUFDLE9BQU87ZUFBQSxDQUFDLENBQUM7YUFDcEQ7Ozs7OztlQVRVLG1CQUFtQiIsImZpbGUiOiJleGFtcGxlcy83L3ZpZXctbW9kZWwuanMiLCJzb3VyY2VSb290IjoiL3NyYy8ifQ==

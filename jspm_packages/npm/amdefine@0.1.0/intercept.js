@@ -1,6 +1,6 @@
 /* */ 
 var inserted,
-    Module = require("..\..\..\..\..\..\repos\skeleton-navigation\module"),
+    Module = require("module"),
     fs = require("fs"),
     existingExtFn = Module._extensions['.js'],
     amdefineRegExp = /amdefine\.js/;

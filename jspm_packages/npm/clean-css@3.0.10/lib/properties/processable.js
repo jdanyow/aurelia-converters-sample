@@ -3,7 +3,7 @@
   module.exports = (function() {
     var tokenModule = require("./token");
     var validator = require("./validator");
-    var Splitter = require("..\utils\splitter.js");
+    var Splitter = require("../utils/splitter");
     var canOverride = {
       always: function() {
         return true;

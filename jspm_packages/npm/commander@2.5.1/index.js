@@ -53,7 +53,7 @@
   };
   Command.prototype.parseExpectedArgs = function(args) {
     if (!args.length)
-      return;
+      return ;
     var self = this;
     args.forEach(function(arg) {
       var argDetails = {

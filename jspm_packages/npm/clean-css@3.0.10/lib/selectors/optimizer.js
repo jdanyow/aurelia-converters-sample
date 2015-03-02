@@ -1,7 +1,7 @@
 /* */ 
 var Tokenizer = require("./tokenizer");
-var SimpleOptimizer = require("./optimizers\simple");
-var AdvancedOptimizer = require("./optimizers\advanced");
+var SimpleOptimizer = require("./optimizers/simple");
+var AdvancedOptimizer = require("./optimizers/advanced");
 function SelectorsOptimizer(options, context) {
   this.options = options || {};
   this.context = context || {};

@@ -1,11 +1,11 @@
 /* */ 
 (function(process) {
-  var Buffer = require("..\..\index.js").Buffer;
+  var Buffer = require("../../../buffer@3.0.3").Buffer;
   if (process.env.OBJECT_IMPL)
     Buffer.TYPED_ARRAY_SUPPORT = false;
   var assert = require("assert");
   var util = require("util");
-  var buffer = require("..\..\index.js");
+  var buffer = require("../../../buffer@3.0.3");
   buffer.INSPECT_MAX_BYTES = 2;
   var b = new Buffer(4);
   b.fill('1234');

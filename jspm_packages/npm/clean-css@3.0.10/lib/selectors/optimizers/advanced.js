@@ -1,6 +1,6 @@
 /* */ 
 (function(process) {
-  var PropertyOptimizer = require("..\..\properties\optimizer.js");
+  var PropertyOptimizer = require("../../properties/optimizer");
   var CleanUp = require("./clean-up");
   function AdvancedOptimizer(options, context) {
     this.options = options;

@@ -1,6 +1,6 @@
 /* */ 
 (function(process) {
-  var B = require("..\index.js").Buffer;
+  var B = require("../../buffer@3.0.3").Buffer;
   var test = require("tape");
   if (process.env.OBJECT_IMPL)
     B.TYPED_ARRAY_SUPPORT = false;

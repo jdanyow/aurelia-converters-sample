@@ -485,7 +485,7 @@
         step;
     while (!(step = iterator.next()).done)
       if (stepCall(f, step.value, entries) === false)
-        return;
+        return ;
   }
   var NODE = cof(process) == PROCESS,
       core = {},
