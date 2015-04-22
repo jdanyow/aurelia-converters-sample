@@ -93,6 +93,7 @@ function applySyntaxHighlighting(element) {
 @inject(Element)
 export class Markdown {
   @bindable value;
+  element;
 
   constructor(element) {
     this.element = element;

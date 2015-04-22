@@ -6,6 +6,8 @@ var httpClient = new HttpClient().configure(builder => builder.withResponseType(
 @customAttribute('source')
 @inject(Element)
 export class Source {
+  element;
+
   constructor(element) {
     this.element = element;
   }

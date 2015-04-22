@@ -21,12 +21,9 @@ System.register(['aurelia-framework', './example-context'], function (_export) {
         function Example(context) {
           _classCallCheck(this, _Example);
 
-          this.base = _instanceInitializers.base.call(this);
+          this.__initializeProperties();
 
           this.context = context;
-          this.model = null;
-          this.view = null;
-          this.result = false;
         }
 
         var _Example = Example;
@@ -37,10 +34,34 @@ System.register(['aurelia-framework', './example-context'], function (_export) {
           initializer: function () {},
           enumerable: true
         }, {
+          key: 'context',
+          value: undefined,
+          enumerable: true
+        }, {
+          key: 'model',
+          value: undefined,
+          enumerable: true
+        }, {
+          key: 'view',
+          value: undefined,
+          enumerable: true
+        }, {
+          key: 'result',
+          value: undefined,
+          enumerable: true
+        }, {
           key: 'baseChanged',
           value: function baseChanged(newValue) {
             this.context.base = newValue;
             this.context.example = this;
+          }
+        }, {
+          key: '__initializeProperties',
+          value: function __initializeProperties() {
+            this.base = _instanceInitializers.base.call(this);
+            this.model = null;
+            this.view = null;
+            this.result = false;
           }
         }], null, _instanceInitializers);
 
@@ -52,4 +73,4 @@ System.register(['aurelia-framework', './example-context'], function (_export) {
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9leGFtcGxlLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Z0ZBSWEsT0FBTzs7OztpQ0FKWixNQUFNO21DQUFFLFFBQVE7O3VDQUNoQixjQUFjOzs7Ozs7Ozs7QUFHVCxhQUFPOzs7QUFHUCxpQkFIQSxPQUFPLENBR04sT0FBTyxFQUFFOzs7ZUFGWCxJQUFJLHlCQUFKLElBQUk7O0FBR1osY0FBSSxDQUFDLE9BQU8sR0FBRyxPQUFPLENBQUM7QUFDdkIsY0FBSSxDQUFDLEtBQUssR0FBRyxJQUFJLENBQUM7QUFDbEIsY0FBSSxDQUFDLElBQUksR0FBRyxJQUFJLENBQUM7QUFDakIsY0FBSSxDQUFDLE1BQU0sR0FBRyxLQUFLLENBQUM7U0FDckI7O3VCQVJVLE9BQU87Ozs7dUJBQ2pCLFFBQVE7Ozs7O2lCQVNFLHFCQUFDLFFBQVEsRUFBRTtBQUNwQixnQkFBSSxDQUFDLE9BQU8sQ0FBQyxJQUFJLEdBQUcsUUFBUSxDQUFDO0FBQzdCLGdCQUFJLENBQUMsT0FBTyxDQUFDLE9BQU8sR0FBRyxJQUFJLENBQUM7V0FDN0I7OztBQWJVLGVBQU8sR0FEbkIsTUFBTSxDQUFDLGNBQWMsQ0FBQyxDQUNWLE9BQU8sS0FBUCxPQUFPO2VBQVAsT0FBTzs7O3lCQUFQLE9BQU8iLCJmaWxlIjoicmVzb3VyY2VzL2V4YW1wbGUuanMiLCJzb3VyY2VSb290IjoiLi4vc3JjLyJ9
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9leGFtcGxlLmpzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7Z0ZBSWEsT0FBTzs7OztpQ0FKWixNQUFNO21DQUFFLFFBQVE7O3VDQUNoQixjQUFjOzs7Ozs7Ozs7QUFHVCxhQUFPOzs7QUFPUCxpQkFQQSxPQUFPLENBT04sT0FBTyxFQUFFOzs7OztBQUNuQixjQUFJLENBQUMsT0FBTyxHQUFHLE9BQU8sQ0FBQztTQUN4Qjs7dUJBVFUsT0FBTzs7Ozt1QkFDakIsUUFBUTs7Ozs7Ozs7Ozs7Ozs7Ozs7Ozs7O2lCQVVFLHFCQUFDLFFBQVEsRUFBRTtBQUNwQixnQkFBSSxDQUFDLE9BQU8sQ0FBQyxJQUFJLEdBQUcsUUFBUSxDQUFDO0FBQzdCLGdCQUFJLENBQUMsT0FBTyxDQUFDLE9BQU8sR0FBRyxJQUFJLENBQUM7V0FDN0I7Ozs7aUJBYlMsSUFBSSx5QkFBSixJQUFJO2lCQUVkLEtBQUssR0FBRyxJQUFJO2lCQUNaLElBQUksR0FBRyxJQUFJO2lCQUNYLE1BQU0sR0FBRyxLQUFLOzs7O0FBTEgsZUFBTyxHQURuQixNQUFNLENBQUMsY0FBYyxDQUFDLENBQ1YsT0FBTyxLQUFQLE9BQU87ZUFBUCxPQUFPOzs7eUJBQVAsT0FBTyIsImZpbGUiOiJyZXNvdXJjZXMvZXhhbXBsZS5qcyIsInNvdXJjZVJvb3QiOiIuLi9zcmMvIn0=

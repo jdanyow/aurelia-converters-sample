@@ -114,15 +114,15 @@
       framework will apply to model values before displaying them in the view.
       Our converters use the MomentJS and NumeralJS libraries to format the data.
 
-      Next we updated the view to `import` the converters so they can be used in
-      the view.  When importing a resource such as a value converter you supply
-      the path to the resource to the import element's `from` attribute.
+      Next we updated the view to `require` the converters so they can be used in
+      the view.  When requiring a resource such as a value converter you supply
+      the path to the resource to the require element's `from` attribute.
     </markdown>
 
     <markdown value="
       ``` markup
-      <import from=&quot;./date-format&quot;></import>
-      <import from=&quot;./currency-format&quot;></import>
+      <require from=&quot;./date-format&quot;></require>
+      <require from=&quot;./currency-format&quot;></require>
       ```">
     </markdown>
 

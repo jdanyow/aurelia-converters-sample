@@ -19,12 +19,12 @@ export class File {
   example;
   base;
   githubBase;
+  info = null;
 
   constructor(context) {
     this.example = context.example;
     this.base = context.base;
     this.githubBase = context.githubBase;
-    this.info = null;
   }
 
   bind() {
