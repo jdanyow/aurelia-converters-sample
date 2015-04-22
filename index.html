@@ -1,0 +1,48 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Aurelia Value Converters</title>
+    <link rel="stylesheet" type="text/css" href="jspm_packages/npm/font-awesome@4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" type="text/css" href="jspm_packages/github/twbs/bootstrap@3.3.4/css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="styles/styles.css">
+    <link rel="stylesheet" type="text/css" href="prism/prism.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+  </head>
+  <body aurelia-app="main">
+    <div class="splash">
+      <div class="message">Aurelia Value Converters</div>
+      <i class="fa fa-spinner fa-spin"></i>
+    </div>
+
+    <!-- for embedding aurelia app in ghost blog post via iframe: -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/set-iframe-height/1.1.1/set-iframe-height-child-min.js"></script>
+
+    <!-- custom build of prism syntax highlighting: -->
+    <script src="prism/prism.js" data-manual></script>
+
+    <script src="jspm_packages/system.js"></script>
+    <script src="config.js"></script>
+    <script>
+     System.config({
+       "paths": {
+         "*": "dist/*.js"
+       }
+     });
+   </script>
+    <script>
+      System.import('aurelia-bootstrapper');
+    </script>
+
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-59973368-1', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
