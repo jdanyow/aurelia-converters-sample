@@ -1,0 +1,313 @@
+<template>
+  <div class.bind="iframe ? 'container-fluid ghost' : 'container'">
+    <markdown>
+      # Aurelia Value Converters
+      An overview of the [Aurelia](http://aurelia.io) framework's value
+      converter functionality.
+
+      This page is written using Aurelia and contains **live examples**.  The full
+      source is [here](https://github.com/jdanyow/aurelia-converters-sample).
+
+      ## Data Binding
+
+      A short description of data-binding from the Aurelia
+      [docs](http://aurelia.io/docs.html):
+
+      *In Aurelia, user interface elements are composed of view and view-model
+      pairs. The view is written with HTML and is rendered into the DOM. The
+      view-model is written with JavaScript and provides data and behavior to
+      the view.  Aurelia's powerful databinding links the two pieces together
+      allowing changes in your data to be reflected in the view and vice versa.*
+
+      Check out the getting started video
+      [here](http://aurelia.io/) or the docs [here](http://aurelia.io/docs.html)
+      for more information.
+
+      ### Simple Binding Example
+
+      Here's a simple data-binding example using the **bind** (`.bind="expression"`)
+      and **interpolation** (`${expression}`) techniques:
+    </markdown>
+
+    <example base="examples/1">
+      <column>
+        <file src="view-model.js" model="true"></file>
+      </column>
+      <column>
+        <file src="view.html" view="true"></file>
+      </column>
+    </example>
+
+    <markdown>
+      ### Binding Dates and Numbers
+
+      Sometimes the raw data exposed by your view-model isn't in a format that's
+      ideal for displaying in the UI.  Rendering date and numeric values are
+      common scenarios:
+    </markdown>
+
+    <example base="examples/2">
+      <column>
+        <file src="view-model.js" model="true"></file>
+      </column>
+      <column>
+        <file src="view.html" view="true"></file>
+      </column>
+    </example>
+
+    <markdown>
+      Ideally the date would be in a more readable format and the amount would
+      be formatted as currency.  One solution to this problem would be to compute
+      the formatted values and expose them as properties of the view-model.  This
+      is certainly a valid approach however defining extra properties and methods
+      in your models can get messy, especially when you need to keep the formatted
+      values in sync when the original property values change.  Fortunately
+      Aurelia has a feature that makes solving this problem quite easy...
+
+      ## Value Converters
+
+      > A value converter is a class whose responsibility is to convert
+      view-model values into values that are appropriate to display in the view
+      *and visa-versa*.
+
+      Most commonly you'll be creating value converters that translate model data
+      to a format suitable for the view however there are situations where you'll
+      need to convert data from the view to a format expected by the view-model,
+      typically when using two-way binding with input elements.
+
+      If you've used value converters in other languages such as WPF/Silverlight
+      you'll find Aurelia value converters are quite similar although with a few
+      notable improvements:
+
+      1. The Aurelia ValueConverter interface uses `toView` and `fromView` methods
+        which make it quite clear which direction the data is flowing.  This is in
+        contrast to WPF's `IValueConverter` which uses `Convert` and `ConvertBack`.
+      2. In Aurelia, converter parameter's can be data-bound.  This is something
+        that was missing in Silverlight and enables more advanced binding scenarios.
+      3. Aurelia value converter methods can accept multiple parameters.
+      4. Multiple value converters can be composed using pipes (`|`).
+
+      ## Simple Converters
+
+      Before we get too far into the details, let's rework the previous example
+      to use a couple of basic value converters.  Aurelia and the popular
+      [Moment](http://momentjs.com/) and [Numeral](http://numeraljs.com/) libraries
+      will take care of the heavy lifting, we just need to wire things up...
+    </markdown>
+
+    <example base="examples/3">
+      <column>
+        <file src="date-format.js"></file>
+        <file src="currency-format.js"></file>
+      </column>
+      <column>
+        <file src="view-model.js" model="true"></file>
+        <file src="view.html" view="true"></file>
+      </column>
+    </example>
+
+    <markdown>
+      OK, the result looks much better but how did this all work?
+
+      Well first we created a couple of value converters:  `DateFormatValueConverter`
+      and `CurrencyFormatValueConverter`.  Each has a `toView` method that the Aurelia
+      framework will apply to model values before displaying them in the view.
+      Our converters use the MomentJS and NumeralJS libraries to format the data.
+
+      Next we updated the view to `import` the converters so they can be used in
+      the view.  When importing a resource such as a value converter you supply
+      the path to the resource to the import element's `from` attribute.
+    </markdown>
+
+    <markdown value="
+      ``` markup
+      <import from=&quot;./date-format&quot;></import>
+      <import from=&quot;./currency-format&quot;></import>
+      ```">
+    </markdown>
+
+    <markdown>
+      When Aurelia processes the resource it examines the class's metadata to
+      determine the resource type (custom element, behavior, value converter, etc).
+      Metadata isn't required and in fact our value converters didn't expose any.
+      Instead we relied on one of Aurelia's simple conventions:  class names ending
+      with *ValueConverter* are assumed to be value converters.  The convention
+      registers the converter using the class name, camel-cased, with the *ValueConverter*
+      portion stripped from the end.
+
+      * `DateFormatValueConverter` registers as `dateFormat`
+      * `CurrencyFormatValueConverter` registers as `currencyFormat`
+
+      Finally we applied the converter in the binding using the pipe `|` syntax:
+
+      ``` markup
+      ${currentDate | dateFormat} <br/>
+      ${netWorth | currencyFormat}
+      ```
+
+      ## Converter Parameters
+
+      The converters in the previous example worked great but what if we needed
+      to display dates and numbers in multiple formats.  It would be quite repetitive
+      to define a converter for each format we needed to display.  A better approach
+      would be to modify the converters to accept a `format` parameter.  Then we'd be
+      able to specify the format in the binding and get maximum reuse out of our format
+      converters.
+    </markdown>
+
+    <example base="examples/4">
+      <column>
+        <file src="date-format.js"></file>
+        <file src="view-model.js" model="true"></file>
+      </column>
+      <column>
+        <file src="number-format.js"></file>
+        <file src="view.html" view="true"></file>
+      </column>
+    </example>
+
+    <markdown>
+      With the `format` parameter added to the `toView` methods we are able to
+      specify the format in the binding using the `[expression] | [converterName]:[parameterExpression]`
+      syntax:
+
+      ``` markup
+      ${currentDate | dateFormat:'MMMM Mo YYYY'}
+      ${netWorth | numberFormat:'$0.0a'}
+      ```
+
+      ## Binding Converter Parameters
+
+      Converter parameters needn't be literal values.  You can bind parameter values
+      to achieve dynamic results:
+    </markdown>
+
+    <example base="examples/5">
+      <column>
+        <file src="number-format.js"></file>
+        <file src="view-model.js" model="true"></file>
+      </column>
+      <column>
+        <file src="view.html" view="true"></file>
+      </column>
+    </example>
+
+    <markdown>
+      ## Multiple Parameters / Composing Converters
+
+      Value converters can accept multiple parameters and multiple converters
+      can be composed in the same binding expression, providing a lot of
+      flexibility and opportunity for reuse.
+
+      In the following example we have a view model exposing an array of Aurelia
+      repos.  The view uses a repeat binding to list the repos in a table.
+      A `SortValueConverter` is used to sort the array based on two arguments:
+      `propertyName` and `direction`.  A second converter, `TakeValueConverter`
+      accepting a `count` argument is applied to limit the number of repositories
+      listed:
+    </markdown>
+
+    <markdown value="
+      ``` markup
+      <tr repeat.for=&quot;repo of repos | sort:column.value:direction.value | take:10&quot;>
+        ...
+      </tr>
+      ```">
+    </markdown>
+
+    <markdown>
+      Here's the full example:
+    </markdown>
+
+    <example base="examples/6">
+      <column>
+        <file src="view-model.js" model="true"></file>
+        <file src="sort.js"></file>
+        <file src="take.js"></file>
+      </column>
+      <column>
+        <file src="view.html" view="true"></file>
+      </column>
+    </example>
+
+    <markdown>
+      ## Object Parameters
+
+      Aurelia supports object converter parameters.  An alternate implementation
+      of the `SortValueConverter` using a single `config` parameter would look like
+      this:
+    </markdown>
+
+    <example base="examples/7">
+      <column>
+        <file src="sort.js"></file>
+        <file src="view-model.js" model="true"></file>
+      </column>
+      <column>
+        <file src="view.html" view="true"></file>
+      </column>
+    </example>
+
+    <markdown>
+      There are a couple of advantages to this approach: you don't need to remember
+      the order of the converter parameter arguments and anyone reading the markup
+      can easily tell what each converter parameter represents.
+
+      ## Bi-directional Value Converters
+
+      So far we've been using converters with one-way bindings.  The data flows
+      in a single direction, from the model to the view.  When using a converter
+      in an input element's `value` binding we need a way to convert the user's
+      data entry to the format expected by the view model.  This is where the
+      value converter's `fromView` method comes into play, taking the element's
+      value and converting it to the format expected by the view model.
+
+      In the example below we have a view model that exposes colors in an object
+      format, with properties for the red, green and blue components.  In the view
+      we want to bind this color object to an HTML5 color input.
+      The color input expects hex format text so we'll use an `RgbToHexValueConverter`
+      to facilitate the binding.
+    </markdown>
+
+    <example base="examples/8">
+      <column>
+        <file src="rgb-to-hex.js"></file>
+      </column>
+      <column>
+        <file src="view-model.js" model="true"></file>
+        <file src="view.html" view="true"></file>
+      </column>
+    </example>
+
+    <markdown>
+      ## Globally Accessible Value Converters
+
+      In all our examples we've been using the `require` element to import
+      converters we need into our view.  There's an easier way.  If you have some
+      commonly used value converters that you'd like to make globally available,
+      use Aurelia's `globalizeResources` function to register them.  This will
+      will eliminate the need for `require` elements at the top of every view.
+
+      A typical Aurelia app keeps it's global resources
+      (converters, behaviors, custom elements) in a resources subfolder.  An `index.js`
+      file in the resources folder is responsible for importing and registering them
+      using Aurelia's `withResources` method.
+
+      The resources must be installed before the Aurelia application starts so you'll
+      need to use `aurelia-app="main"` style bootstrapping if you haven't done so already.
+      This is very easy, in your index.html, change the body element's `aurelia-app`
+      attribute to `aurelia-app="main"`.  Then add a `main.js` file like the one in the example
+      below.
+    </markdown>
+
+    <example base="examples/9">
+      <column>
+        <file src="resources/index.js"></file>
+      </column>
+      <column>
+        <file src="main.js"></file>
+      </column>
+    </example>
+
+  </div>
+</template>
