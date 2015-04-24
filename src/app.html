@@ -130,10 +130,10 @@
       When Aurelia processes the resource it examines the class's metadata to
       determine the resource type (custom element, behavior, value converter, etc).
       Metadata isn't required and in fact our value converters didn't expose any.
-      Instead we relied on one of Aurelia's simple conventions:  class names ending
-      with *ValueConverter* are assumed to be value converters.  The convention
-      registers the converter using the class name, camel-cased, with the *ValueConverter*
-      portion stripped from the end.
+      Instead we relied on one of Aurelia's simple conventions:  export names ending
+      with *ValueConverter* are assumed to be value converters.  **The convention
+      registers the converter using the export name, camel-cased, with the *ValueConverter*
+      portion stripped from the end.**
 
       * `DateFormatValueConverter` registers as `dateFormat`
       * `CurrencyFormatValueConverter` registers as `currencyFormat`
