@@ -1,1 +1,0 @@
-module.exports = require("github:webcomponents/webcomponentsjs@0.5.5/webcomponents");

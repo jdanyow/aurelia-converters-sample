@@ -61,12 +61,11 @@
       "email": "adamwdraper@gmail.com"
     }
   ],
-  "jspm": {},
-  "registry": "npm",
   "format": "cjs",
   "ignore": [
     "node_modules"
   ],
+  "registry": "npm",
   "dependencies": {
     "fs": "github:jspm/nodelibs-fs@^0.1.0"
   }

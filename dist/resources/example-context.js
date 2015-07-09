@@ -1,13 +1,13 @@
 System.register([], function (_export) {
-  var _classCallCheck, ExampleContext;
+  "use strict";
+
+  var ExampleContext;
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   return {
     setters: [],
     execute: function () {
-      "use strict";
-
-      _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
-
       ExampleContext = function ExampleContext(githubBase) {
         _classCallCheck(this, ExampleContext);
 
@@ -18,4 +18,4 @@ System.register([], function (_export) {
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9leGFtcGxlLWNvbnRleHQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijt1QkFBYSxjQUFjOzs7Ozs7Ozs7QUFBZCxvQkFBYyxHQUNkLFNBREEsY0FBYyxDQUNiLFVBQVUsRUFBRTs4QkFEYixjQUFjOztBQUV2QixZQUFJLENBQUMsVUFBVSxHQUFHLFVBQVUsQ0FBQztPQUM5Qjs7Z0NBSFUsY0FBYyIsImZpbGUiOiJyZXNvdXJjZXMvZXhhbXBsZS1jb250ZXh0LmpzIiwic291cmNlUm9vdCI6Ii4uL3NyYy8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9leGFtcGxlLWNvbnRleHQuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O01BQWEsY0FBYzs7Ozs7OztBQUFkLG9CQUFjLEdBQ2QsU0FEQSxjQUFjLENBQ2IsVUFBVSxFQUFFOzhCQURiLGNBQWM7O0FBRXZCLFlBQUksQ0FBQyxVQUFVLEdBQUcsVUFBVSxDQUFDO09BQzlCOztnQ0FIVSxjQUFjIiwiZmlsZSI6InJlc291cmNlcy9leGFtcGxlLWNvbnRleHQuanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgRXhhbXBsZUNvbnRleHQge1xyXG4gIGNvbnN0cnVjdG9yKGdpdGh1YkJhc2UpIHtcclxuICAgIHRoaXMuZ2l0aHViQmFzZSA9IGdpdGh1YkJhc2U7XHJcbiAgfVxyXG59XHJcbiJdLCJzb3VyY2VSb290IjoiL3NvdXJjZS8ifQ==

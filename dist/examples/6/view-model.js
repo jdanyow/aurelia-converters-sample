@@ -1,17 +1,17 @@
 System.register(['aurelia-http-client'], function (_export) {
-  var HttpClient, _classCallCheck, _createClass, AureliaRepositories;
+  'use strict';
+
+  var HttpClient, AureliaRepositories;
+
+  var _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } }
 
   return {
     setters: [function (_aureliaHttpClient) {
       HttpClient = _aureliaHttpClient.HttpClient;
     }],
     execute: function () {
-      'use strict';
-
-      _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError('Cannot call a class as a function'); } };
-
-      _createClass = (function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ('value' in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; })();
-
       AureliaRepositories = (function () {
         function AureliaRepositories() {
           _classCallCheck(this, AureliaRepositories);
@@ -20,10 +20,6 @@ System.register(['aurelia-http-client'], function (_export) {
         }
 
         _createClass(AureliaRepositories, [{
-          key: 'repos',
-          value: undefined,
-          enumerable: true
-        }, {
           key: 'activate',
           value: function activate() {
             var _this = this;
@@ -41,4 +37,4 @@ System.register(['aurelia-http-client'], function (_export) {
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4YW1wbGVzLzYvdmlldy1tb2RlbC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiO2lEQUVhLG1CQUFtQjs7OztzQ0FGeEIsVUFBVTs7Ozs7Ozs7O0FBRUwseUJBQW1CO2lCQUFuQixtQkFBbUI7Z0NBQW5CLG1CQUFtQjs7ZUFDOUIsS0FBSyxHQUFHLEVBQUU7OztxQkFEQyxtQkFBbUI7Ozs7OztpQkFHdEIsb0JBQUc7OztBQUNULG1CQUFPLElBQUksVUFBVSxFQUFFLENBQ3BCLEdBQUcsQ0FBQywyQ0FBMkMsQ0FBQyxDQUNoRCxJQUFJLENBQUMsVUFBQSxRQUFRO3FCQUFJLE1BQUssS0FBSyxHQUFHLFFBQVEsQ0FBQyxPQUFPO2FBQUEsQ0FBQyxDQUFDO1dBQ3BEOzs7ZUFQVSxtQkFBbUI7OztxQ0FBbkIsbUJBQW1CIiwiZmlsZSI6ImV4YW1wbGVzLzYvdmlldy1tb2RlbC5qcyIsInNvdXJjZVJvb3QiOiIuLi9zcmMvIn0=
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImV4YW1wbGVzLzYvdmlldy1tb2RlbC5qcyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7a0JBRWEsbUJBQW1COzs7Ozs7OztzQ0FGeEIsVUFBVTs7O0FBRUwseUJBQW1CO2lCQUFuQixtQkFBbUI7Z0NBQW5CLG1CQUFtQjs7ZUFDOUIsS0FBSyxHQUFHLEVBQUU7OztxQkFEQyxtQkFBbUI7O2lCQUd0QixvQkFBRzs7O0FBQ1QsbUJBQU8sSUFBSSxVQUFVLEVBQUUsQ0FDcEIsR0FBRyxDQUFDLDJDQUEyQyxDQUFDLENBQ2hELElBQUksQ0FBQyxVQUFBLFFBQVE7cUJBQUksTUFBSyxLQUFLLEdBQUcsUUFBUSxDQUFDLE9BQU87YUFBQSxDQUFDLENBQUM7V0FDcEQ7OztlQVBVLG1CQUFtQjs7O3FDQUFuQixtQkFBbUIiLCJmaWxlIjoiZXhhbXBsZXMvNi92aWV3LW1vZGVsLmpzIiwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IHtIdHRwQ2xpZW50fSBmcm9tICdhdXJlbGlhLWh0dHAtY2xpZW50JztcclxuXHJcbmV4cG9ydCBjbGFzcyBBdXJlbGlhUmVwb3NpdG9yaWVzIHtcclxuICByZXBvcyA9IFtdO1xyXG5cclxuICBhY3RpdmF0ZSgpIHtcclxuICAgIHJldHVybiBuZXcgSHR0cENsaWVudCgpXHJcbiAgICAgIC5nZXQoJ2h0dHBzOi8vYXBpLmdpdGh1Yi5jb20vb3Jncy9hdXJlbGlhL3JlcG9zJylcclxuICAgICAgLnRoZW4ocmVzcG9uc2UgPT4gdGhpcy5yZXBvcyA9IHJlc3BvbnNlLmNvbnRlbnQpO1xyXG4gIH1cclxufVxyXG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

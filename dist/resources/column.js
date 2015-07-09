@@ -1,13 +1,13 @@
 System.register([], function (_export) {
-  var _classCallCheck, Column;
+  "use strict";
+
+  var Column;
+
+  function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
   return {
     setters: [],
     execute: function () {
-      "use strict";
-
-      _classCallCheck = function (instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } };
-
       Column = function Column() {
         _classCallCheck(this, Column);
       };
@@ -16,4 +16,4 @@ System.register([], function (_export) {
     }
   };
 });
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9jb2x1bW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijt1QkFBYSxNQUFNOzs7Ozs7Ozs7QUFBTixZQUFNLFlBQU4sTUFBTTs4QkFBTixNQUFNOzs7d0JBQU4sTUFBTSIsImZpbGUiOiJyZXNvdXJjZXMvY29sdW1uLmpzIiwic291cmNlUm9vdCI6Ii4uL3NyYy8ifQ==
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbInJlc291cmNlcy9jb2x1bW4uanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6Ijs7O01BQWEsTUFBTTs7Ozs7OztBQUFOLFlBQU0sWUFBTixNQUFNOzhCQUFOLE1BQU07Ozt3QkFBTixNQUFNIiwiZmlsZSI6InJlc291cmNlcy9jb2x1bW4uanMiLCJzb3VyY2VzQ29udGVudCI6WyJleHBvcnQgY2xhc3MgQ29sdW1uIHtcclxufVxyXG4iXSwic291cmNlUm9vdCI6Ii9zb3VyY2UvIn0=

@@ -1,0 +1,339 @@
+commit 34b4f337f8166c4526ce7bf55a024beb3a76ff45
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Tue Apr 21 21:45:26 2015 -0700
+
+    Fixed last commit (fix to walker).
+
+commit b077b3f68b6f99bc6d70d74809b6dad838a2e1b9
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Tue Apr 21 21:33:12 2015 -0700
+
+    Fixed walker so that it stops at `this.root`.
+    
+    Before it continued til the document root.
+
+commit 0fd33b796d6f6ab634de69bcb2bdb98225cc6815
+Merge: b7dc133 386560c
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Mon Apr 20 17:37:24 2015 -0700
+
+    Merge pull request #26 from edadams/patch-1
+    
+    Typographical error fix, "THe" -> "The"
+
+commit 386560c40f43639beea47975c698594a613f5d80
+Author: Ed Adams <edadams@users.noreply.github.com>
+Date:   Tue Apr 21 00:18:03 2015 +0100
+
+    Typographical error fix, "THe" -> "The"
+
+commit b7dc1330478cdaac4c3552fd0c2332bb1ed4ad8b
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Apr 19 22:46:57 2015 -0700
+
+    Removed unused variable declaration.
+
+commit 2d200c6c412ac7dd29418b79fb412dae99c74cf7
+Merge: fa844ec 6285746
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Apr 19 21:06:53 2015 -0700
+
+    Merge branch 'master' of https://github.com/elibarzilay/commonmark.js into elibarzilay-master
+    
+    Conflicts:
+    	lib/inlines.js
+
+commit fa844ec2471b666a6e23b5bc01d39f7b7d8b1520
+Merge: 25a408c af32483
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Thu Apr 16 20:25:44 2015 -0700
+
+    Merge pull request #25 from robinst/fix-comment
+    
+    Fix comment of processInlines (it doesn't return anything)
+
+commit 25a408c022fea2aa383fbb02ad5c8ce82b1efba9
+Merge: 0be6e44 28e6e85
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Thu Apr 16 20:25:09 2015 -0700
+
+    Merge pull request #24 from robinst/unused-argument
+    
+    Remove unused argument from processEmphasis
+
+commit af32483cf81ae1b238ecb07e921442e20ef78395
+Author: Robin Stocker <robin@nibor.org>
+Date:   Fri Apr 17 12:50:02 2015 +1000
+
+    Fix comment of processInlines (it doesn't return anything)
+
+commit 28e6e85613ffb532fb39a41b1d9607cfe55e2a96
+Author: Robin Stocker <robin@nibor.org>
+Date:   Fri Apr 17 12:47:09 2015 +1000
+
+    Remove unused argument from processEmphasis
+
+commit 62857465f237c539b7e4e8eb279c2a945f307320
+Author: Eli Barzilay <eli@barzilay.org>
+Date:   Thu Apr 16 12:06:56 2015 -0400
+
+    Shorter code for removing a bunch of delimiters.
+    
+    Change the links on the edges instead of dropping them one by one.
+    Should also be faster in some case, but in a probably too minor to
+    notice way.
+    
+    (Also change "btw" in a comment, since it took me a few seconds to
+    decipher it...)
+
+commit 5add4938046d3f6bb9be17fe22bfe2352c162190
+Author: Eli Barzilay <eli@barzilay.org>
+Date:   Thu Apr 16 11:48:22 2015 -0400
+
+    Minor code layout improvement.
+    
+    Two changes of
+    
+        if (stuff) {
+            ...lots of stuf...
+        } {
+            closer = closer.next;
+        }
+    
+    to a more readable form:
+    
+        if (!stuff) {
+            closer = closer.next;
+        } {
+            ...lots of stuf...
+        }
+
+commit 0be6e44f932eacdd95ebe18b2e6df1c72df703fd
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sat Apr 4 22:23:30 2015 -0700
+
+    Dingus code cleanup.
+
+commit b55cba44d29f53b1e1e492b0bc9514f9190b6bdc
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sat Apr 4 22:18:29 2015 -0700
+
+    Dingus: reindented.
+
+commit 210a668e0857b0d61f6e478d88355b45e06bc8cd
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sat Apr 4 22:18:02 2015 -0700
+
+    Dingus: small code improvements.
+
+commit e556d79db058a77634c480295a390d144faff352
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sat Apr 4 22:09:13 2015 -0700
+
+    Fixed linter errors.
+
+commit f4631e8bb1c7d6bb0042c4a1f48b7fd6f587ab6a
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sat Apr 4 17:45:27 2015 -0700
+
+    Rewrote dingus without ACE editor. Closes #11.
+    
+    * The ACE editor is problematic from an accesibility point of
+      view.  See #11.
+    * The dingus with ACE produces overlapping content in small windows.
+    
+    What we lose: ability to have soft-wrapped text.  (It's too difficult
+    to calculate the "real" line number from the scroll position of the
+    text area if lines can be soft-wrapped.  ACE had a function for
+    this.)  Perhaps this is for the best, since with soft-wrapped text
+    the difference between a soft-wrapped and hard-wrapped line is
+    invisible, and it can matter for rendering.
+
+commit 52c4dd8a92351eca5af87860e266b52dde3b431f
+Merge: ab197dc 1e1ad43
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Mon Mar 30 09:15:16 2015 -0700
+
+    Merge pull request #22 from robinst/parseNewline-final-space-opt
+    
+    Optimize checking for final spaces in parseNewline
+
+commit 1e1ad43b748982362aa1accfd2b404f254ce5ebe
+Author: Robin Stocker <robin@nibor.org>
+Date:   Mon Mar 30 18:24:02 2015 +1100
+
+    Optimize checking for final spaces in parseNewline
+    
+    This seems to yield a speed boost of about 5-10 % using `make bench`.
+
+commit ab197dc17fe30f1922e9b65138f24a9276f1b342
+Merge: 0cd37cb b1491ab
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 29 22:58:27 2015 -0700
+
+    Merge pull request #21 from robinst/regexp-constant
+    
+    Move regexp to other regexp definitions
+
+commit b1491abcbf6e12b4e2fc9aeea98fc6ed662570ac
+Author: Robin Stocker <robin@nibor.org>
+Date:   Mon Mar 30 16:46:48 2015 +1100
+
+    Move regexp to other regexp definitions
+
+commit 0cd37cba6ebd6e7e92cca41492dc72d4141a0e04
+Merge: 035b086 13b2d39
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 29 22:46:33 2015 -0700
+
+    Merge pull request #20 from robinst/spnl-boolean
+    
+    Return boolean from spnl to be consistent with other functions
+
+commit 13b2d39f2187a6b7ba5778a68c52cc96198988a0
+Author: Robin Stocker <robin@nibor.org>
+Date:   Mon Mar 30 16:37:24 2015 +1100
+
+    Return boolean from spnl to be consistent with other functions
+
+commit 035b086ec677b80ecf9823f444c3a58cafd7da43
+Merge: f5179ba c5755f3
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Fri Mar 27 13:55:51 2015 -0700
+
+    Merge pull request #19 from robinst/unnecessary-hrule-match
+    
+    Remove unnecessary check for hrule in parseListMarker
+
+commit f5179bab2240aab7b4d2a48b4bbaa1f4788d006a
+Merge: c2e6deb d62730e
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Fri Mar 27 13:55:08 2015 -0700
+
+    Merge pull request #18 from robinst/define-entity-and-escapable-once
+    
+    Don't define ENTITY and ESCAPABLE patterns twice
+
+commit c2e6deb372231e7352a954ffd1e1fbc7e7fdea2a
+Merge: e1fbd1a 63d3f80
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Fri Mar 27 13:53:23 2015 -0700
+
+    Merge pull request #17 from robinst/parseBackticks-return-boolean
+    
+    Return false instead of 0 from parseBackticks
+
+commit c5755f3dba190439e32f381d76b26a03fa025c9f
+Author: Robin Stocker <robin@nibor.org>
+Date:   Tue Mar 24 15:16:22 2015 +1100
+
+    Remove unnecessary check for hrule in parseListMarker
+    
+    By the time parseListMarker is called, the hrule block start was already
+    tried. In case it matches, no further block starts are tried. So the
+    later check is not necessary and can be removed.
+
+commit d62730ed1a69627ea62ae31d92d91d9081766fb6
+Author: Robin Stocker <robin@nibor.org>
+Date:   Tue Mar 24 15:05:56 2015 +1100
+
+    Don't define ENTITY and ESCAPABLE patterns twice
+
+commit 63d3f80ca7af68e21190a227f9e85b2fba2f7a03
+Author: Robin Stocker <robin@nibor.org>
+Date:   Tue Mar 24 13:04:47 2015 +1100
+
+    Return false instead of 0 from parseBackticks
+    
+    The other return statements also return a boolean.
+
+commit e1fbd1a19ec08fec53c27eef52a9fabdfccbd451
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 15 12:14:45 2015 -0700
+
+    Updated benchmarks.
+
+commit 801cfd75f308d9dac1eaa5eeb6412ae7ba522b6d
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 15 12:14:19 2015 -0700
+
+    Change markdown-it init in benchmark to make it more fair.
+
+commit 3e6f25ff094a2dc89085ff48c0b563e9a25c77bc
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Fri Mar 13 12:27:23 2015 -0700
+
+    Updated benchmarks.
+
+commit bee2b2695db485aa80ab2d62aebab10945b997e1
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Fri Mar 13 12:27:09 2015 -0700
+
+    Removed smart benchmark, fixed format_benchmarks.awk.
+
+commit a29be4b01de902cd2e102dbdfca87663a85deca5
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 8 22:18:01 2015 -0700
+
+    test.js: return error status if tests fail.
+
+commit 4915a724604860d35a75ea4ad3d37e9298cffd63
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 8 22:12:46 2015 -0700
+
+    Use encode/decode from markdown-it/mdurl for URL normalization.
+    
+    This fixes cases like
+    
+        [link](http://google.com/?q=%3f)
+    
+    which was formerly wrongly converted to
+    
+        <a href="http://google.com/?q=%253f">link</a
+    
+    Closes #9.
+
+commit 23fb5b2a4f6687f0c2bbd2b00d09c438fa4f03db
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 8 15:19:16 2015 -0700
+
+    package.json:  test.js no longer takes an argument.
+
+commit db02aff1da5cfd1e614470b850c49601b5a03812
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Sun Mar 8 15:15:38 2015 -0700
+
+    Refactored test.js, added smart_punct tests from cmark.
+
+commit 20186059e2a655b776506af29c26f5a25ee230fa
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Sun Mar 8 15:01:16 2015 -0700
+
+    More refactoring in test program.
+
+commit 4e21e8372f551efea79c30ca37be55fd60f6532c
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Sun Mar 8 14:45:58 2015 -0700
+
+    Factored out specTest function in test.js.
+
+commit 2ea98a98c3a6b123f8fa047e58378ec1958f204f
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 8 12:28:41 2015 -0700
+
+    Smart: unmatched double quote should be left.
+    
+    See #14.  This issue should stay open until tests are added to
+    the test suite.
+
+commit c3ef3523fd1b3dd6928a3764ff3dd427888bdecf
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Fri Mar 6 09:30:09 2015 -0800
+
+    Small fix in finalize (closes #13).
+
+commit b86a356c139f2c5ffccdf3ce5e3d8f85343815b4
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Tue Mar 3 22:43:48 2015 -0800
+
+    Dingus Makefile:  added dependencies for commonmark.js.

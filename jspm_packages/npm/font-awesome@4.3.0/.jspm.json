@@ -70,6 +70,7 @@
     "shasum": "44eeb790cdf986642786f33fce784764f1841c40",
     "tarball": "http://registry.npmjs.org/font-awesome/-/font-awesome-4.3.0.tgz"
   },
+  "directories": {},
   "jspm": {
     "main": "css/font-awesome.css!",
     "jspmNodeConversion": false,
@@ -81,10 +82,6 @@
   "main": "css/font-awesome.css!",
   "jspmNodeConversion": false,
   "registry": "jspm",
-  "format": "cjs",
-  "ignore": [
-    "node_modules"
-  ],
   "dependencies": {
     "css": "0.1"
   }

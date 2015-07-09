@@ -1,0 +1,62 @@
+    test.js: return error status if tests fail.
+
+commit 4915a724604860d35a75ea4ad3d37e9298cffd63
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 8 22:12:46 2015 -0700
+
+    Use encode/decode from markdown-it/mdurl for URL normalization.
+    
+    This fixes cases like
+    
+        [link](http://google.com/?q=%3f)
+    
+    which was formerly wrongly converted to
+    
+        <a href="http://google.com/?q=%253f">link</a
+    
+    Closes #9.
+
+commit 23fb5b2a4f6687f0c2bbd2b00d09c438fa4f03db
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 8 15:19:16 2015 -0700
+
+    package.json:  test.js no longer takes an argument.
+
+commit db02aff1da5cfd1e614470b850c49601b5a03812
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Sun Mar 8 15:15:38 2015 -0700
+
+    Refactored test.js, added smart_punct tests from cmark.
+
+commit 20186059e2a655b776506af29c26f5a25ee230fa
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Sun Mar 8 15:01:16 2015 -0700
+
+    More refactoring in test program.
+
+commit 4e21e8372f551efea79c30ca37be55fd60f6532c
+Author: John MacFarlane <fiddlosopher@gmail.com>
+Date:   Sun Mar 8 14:45:58 2015 -0700
+
+    Factored out specTest function in test.js.
+
+commit 2ea98a98c3a6b123f8fa047e58378ec1958f204f
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Sun Mar 8 12:28:41 2015 -0700
+
+    Smart: unmatched double quote should be left.
+    
+    See #14.  This issue should stay open until tests are added to
+    the test suite.
+
+commit c3ef3523fd1b3dd6928a3764ff3dd427888bdecf
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Fri Mar 6 09:30:09 2015 -0800
+
+    Small fix in finalize (closes #13).
+
+commit b86a356c139f2c5ffccdf3ce5e3d8f85343815b4
+Author: John MacFarlane <jgm@berkeley.edu>
+Date:   Tue Mar 3 22:43:48 2015 -0800
+
+    Dingus Makefile:  added dependencies for commonmark.js.
